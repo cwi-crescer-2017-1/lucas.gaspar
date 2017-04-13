@@ -1,0 +1,12 @@
+Salvar e enviar para servidor
+git add --all  //adiciona todos os arquivos para ser comitados
+git commit -m "mensagem"
+git push envia pro servidor
+
+Stash na mão (mesmo mostrado na aula com o kraken)
+git add .
+git stash
+git checkout -b novoDiretório  //trocou de branch  OU git pull
+git stash pop
+
+git checkout -b nomedaBranch  //cria uma nova branch
