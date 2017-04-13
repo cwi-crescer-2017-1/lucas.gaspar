@@ -3,10 +3,10 @@ git add --all  //adiciona todos os arquivos para ser comitados
 git commit -m "mensagem"
 git push envia pro servidor
 
-STASH NA M√O (mesmo mostrado na aula com o kraken)
+STASH NA MÔøΩO (mesmo mostrado na aula com o kraken)
 git add .
 git stash
-git checkout -b novoDiretÛrio  //trocou de branch  OU git pull
+git checkout -b novoDiretorio  //trocou de branch  OU git pull
 git stash pop
 
 COMANDOS GERAIS
@@ -15,6 +15,8 @@ git status
 
 git checkout -b nomedaBranch  //cria uma nova branch
 
-git checkout nomebranchExistente  //troca para uma branch que j· existe
+git checkout nomebranchExistente  //troca para uma branch que j√° existe
 
 git branch -a //mostra todas as branchs, tanto locais, quanto remotas.
+
+git pull  // baixa a √∫ltima vers√£o do repost√≥rio
