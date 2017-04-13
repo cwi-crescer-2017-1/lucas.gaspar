@@ -1,0 +1,8 @@
+﻿APOSTILA CAELUM ORIENTAÇÃO A OBJETO
+https://www.caelum.com.br/apostila-java-orientacao-objetos/orientacao-a-objetos-basica/
+
+bluej ferramenta orientação a objetos.
+
+this referencia a variável da classe
+
+void = não retorna nada.
