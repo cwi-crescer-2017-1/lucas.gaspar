@@ -42,7 +42,7 @@ public class SaintTest {
         Armadura virgem = new Armadura("Virgem", Categoria.OURO);
         Saint shaka = new Saint("Shaka", virgem);
         shaka.perderVida(10);
-        assertEquals(90.0, shaka.getVida());
+        assertEquals(90.0, shaka.getVida(),0.001);
     }
     
     @Test // Testar se o saint com menor armadura perde vida
@@ -53,7 +53,7 @@ public class SaintTest {
         Saint shiryu = new Saint("Shiryu", dragao);
         Batalha batalhaepica = new Batalha(shaka, shiryu);
         batalhaepica.iniciar();
-        assertEquals(90.0,shiryu.getVida());
+        assertEquals(90.0,shiryu.getVida(),0.001);
     }
     
 }
