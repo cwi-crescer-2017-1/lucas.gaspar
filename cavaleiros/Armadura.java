@@ -1,9 +1,14 @@
-public class Armadura{
+public class Armadura {
     private String constelacao;
-	private Categoria categoria;
+    private Categoria categoria;
     
-    public Armadura(String constelacao){
+    public Armadura(String constelacao, Categoria categoria) {
         this.constelacao = constelacao;
-		this.categoria = categoria;
+        this.categoria = categoria;
     }
+    
+    public Categoria getCategoria(){
+        return this.categoria;
+    }
+    
 }

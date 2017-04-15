@@ -1,5 +1,5 @@
-
-public enum Genero
-{
-    FEMININO, MASCULINO, NAO_INFORMADO
+public enum Genero {
+    FEMININO,
+    MASCULINO,
+    NAO_INFORMADO;
 }
