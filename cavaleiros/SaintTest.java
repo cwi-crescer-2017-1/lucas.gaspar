@@ -16,47 +16,93 @@ public class SaintTest {
         boolean resultado = milo.getArmaduraVestida();
         assertEquals(true, resultado);
     }
-    
+
     @Test
     public void naoVestirArmaduraDeixaArmaduraNaoVestida() {
         Saint hyoga = new Saint("Hyoga", new Armadura("Cisne", Categoria.BRONZE));
         assertEquals(false, hyoga.getArmaduraVestida());
     }
-    
+
     @Test
     public void aoCriarSaintGeneroENaoInformado() {
         Armadura virgem = new Armadura("Virgem", Categoria.OURO);
         Saint shaka = new Saint("Shaka", virgem);
         assertEquals(Genero.NAO_INFORMADO, shaka.getGenero());
     }
-    
-    @Test //testar se o saint nasce com Status: vivo
-     public void saintNasceVivo() {
-        Armadura virgem = new Armadura("Virgem", Categoria.OURO);
-        Saint shaka = new Saint("Shaka", virgem);
-        assertEquals(StatusSaint.VIVO, shaka.getStatus());
+
+    @Test
+    public void deveSerPossivelAlterarOGenero() {
+        Saint jabu = new Saint("Jabu", new Armadura("Unicórnio", Categoria.BRONZE));
+        jabu.setGenero(Genero.MASCULINO);
+        assertEquals(Genero.MASCULINO, jabu.getGenero());
+        jabu.setGenero(Genero.FEMININO);
+        assertEquals(Genero.FEMININO, jabu.getGenero());
+    }
+
+    @Test
+    public void statusInicialDeveSerVivo() {
+        Saint shiryu = new Saint("Shiryu", new Armadura("Dragão", Categoria.BRONZE));
+        assertEquals(Status.VIVO, shiryu.getStatus());
+    }
+
+    @Test
+    public void vidaInicialDeveSer100() {
+        Saint shiryu = new Saint("Shiryu", new Armadura("Dragão", Categoria.BRONZE));
+        assertEquals(100.0, shiryu.getVida(), 0.01);
+    }
+
+    @Test
+    public void perderDanoComValor10() {
+        // Arrange
+        Saint shiryu = new Saint("Shiryu", new Armadura("Dragão", Categoria.BRONZE));
+        // Act
+        shiryu.perderVida(10);
+        // Assert
+        assertEquals(90, shiryu.getVida(), 0.01);
     }
     
-    @Test //Testar se Saint perde vida na chamada do método perderVida() da classe Saint
-    public void saintPerdeVidaQuandoChamaOMetodo(){
-        Armadura virgem = new Armadura("Virgem", Categoria.OURO);
-        Saint shaka = new Saint("Shaka", virgem);
-        shaka.perderVida(10);
-        assertEquals(90.0, shaka.getVida(),0.001);
+    @Test
+    public void perderDanoComValor100() {
+        // Arrange
+        Saint shiryu = new Saint("Shiryu", new Armadura("Dragão", Categoria.BRONZE));
+        // Act
+        shiryu.perderVida(100);
+        // Assert
+        assertEquals(0, shiryu.getVida(), 0.01);
     }
     
-    @Test // Testar se o saint com menor armadura perde vida
-    public void saintCorretoPerdeVidaNaBatalha(){
-        Armadura virgem = new Armadura("Virgem", Categoria.OURO);
-        Saint shaka = new Saint("Shaka", virgem);
-        Armadura dragao = new Armadura("Dragão", Categoria.PRATA);
-        Saint shiryu = new Saint("Shiryu", dragao);
-        Batalha batalhaepica = new Batalha(shaka, shiryu);
-        batalhaepica.iniciar();
-        assertEquals(90.0,shiryu.getVida(),0.001);
+    @Test
+    public void perderDanoComValor1000() {
+        // Arrange
+        Saint shiryu = new Saint("Shiryu", new Armadura("Dragão", Categoria.BRONZE));
+        // Act
+        shiryu.perderVida(1000);
+        // Assert
+        assertEquals(-900, shiryu.getVida(), 0.01);
     }
     
+    @Test
+    public void perderDanoComValorMenos1000() {
+        // Arrange
+        Saint shiryu = new Saint("Shiryu", new Armadura("Dragão", Categoria.BRONZE));
+        // Act
+        shiryu.perderVida(-1000);
+        // Assert
+        assertEquals(1100, shiryu.getVida(), 0.01);
+    }
+
 }
+
+
+
+
+
+
+
+
+
+
+
 
 
 

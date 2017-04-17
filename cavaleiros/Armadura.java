@@ -7,7 +7,7 @@ public class Armadura {
         this.categoria = categoria;
     }
     
-    public Categoria getCategoria(){
+    public Categoria getCategoria() {
         return this.categoria;
     }
     

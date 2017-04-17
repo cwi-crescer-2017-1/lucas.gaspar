@@ -3,8 +3,8 @@ public class Saint {
     private Armadura armadura;
     private boolean armaduraVestida;
     private Genero genero = Genero.NAO_INFORMADO;
-    private StatusSaint status = StatusSaint.VIVO;
-    private double vida=100.0;
+    private Status status = Status.VIVO;
+    private double vida = 100.;
     
     public Saint(String nome, Armadura armadura) {
         this.nome = nome;
@@ -27,22 +27,22 @@ public class Saint {
     public void setGenero(Genero genero) {
         this.genero = genero;
     }
-      
-    public StatusSaint getStatus() {
-        return this.status;
-    }
     
-    public double perderVida(double quantidadeVidaPerdida){
-        this.vida = this.vida - quantidadeVidaPerdida;
-        return this.vida;
+    public Status getStatus() {
+        return this.status;
     }
     
     public double getVida() {
         return this.vida;
     }
     
-    public Categoria getCategoriaArmadura(){
-        return armadura.getCategoria();
+    public void perderVida(double dano) {
+        //this.vida = this.vida - dano;
+        this.vida -= dano;
+    }
+    
+    public Armadura getArmadura() {
+        return this.armadura;
     }
     
 }
