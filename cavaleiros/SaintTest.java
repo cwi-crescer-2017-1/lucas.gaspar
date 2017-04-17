@@ -90,6 +90,12 @@ public class SaintTest {
         // Assert
         assertEquals(1100, shiryu.getVida(), 0.01);
     }
+    
+    @Test
+    public void criaSaintNasceCom5SentidosDespertados(){
+        Saint jabu = new Saint("Jabu", new Armadura("Unicórnio", Categoria.BRONZE));
+        assertEquals(5, jabu.getQtdSentidosDespertados());
+    }
 
 }
 
