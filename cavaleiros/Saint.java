@@ -39,9 +39,18 @@ public class Saint {
         return this.vida;
     }
 
-    public void perderVida(double dano) {
+    public void perderVida(double dano) throws Exception {
         //this.vida = this.vida - dano;
-        this.vida -= dano;
+        if(dano<0){
+            throw new Exception("Não são permitidos valores negativos em dano");
+        }
+        if (this.status != Status.MORTO) {
+            this.vida -= dano;
+            if (this.vida<=0){
+                this.vida=0;
+                this.status = Status.MORTO;
+            }
+        }
     }
 
     public Armadura getArmadura() {
@@ -50,6 +59,18 @@ public class Saint {
 
     public int getQtdSentidosDespertados() {
         return this.qtdSentidosDespertados;
+    }
+    
+    public Golpe getGolpes(){
+        return this.getArmadura().getConstelacao().getGolpes();
+    }
+    
+    public void aprenderGolpe(Golpe golpe){
+        this.getArmadura().getConstelacao().adicionarGolpe(golpe);
+    }
+    
+    public Golpe getProximoGolpe(){
+        return this.getArmadura().getConstelacao().getGolpes();
     }
 
 }
