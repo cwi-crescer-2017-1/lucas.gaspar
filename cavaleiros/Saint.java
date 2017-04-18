@@ -1,6 +1,6 @@
 public class Saint {
     private String nome;
-    protected Armadura armadura;
+    private Armadura armadura;
     private boolean armaduraVestida;
     private Genero genero = Genero.NAO_INFORMADO;
     private Status status = Status.VIVO;
@@ -10,10 +10,8 @@ public class Saint {
     public Saint(String nome, Armadura armadura) throws Exception {
         this.nome = nome;
         this.armadura = armadura;
-
         /*int valorCategoria = this.armadura.getCategoria().getValor();
         this.qtdSentidosDespertados += valorCategoria;*/
-
     }
 
     public void vestirArmadura() {
@@ -55,6 +53,4 @@ public class Saint {
     }
 
 }
-
-
 
