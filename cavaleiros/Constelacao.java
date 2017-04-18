@@ -1,27 +1,22 @@
-public class Constelacao
-{
+public class Constelacao {
     private String nome;
-    private Golpe[] golpe = new Golpe[3];
-    
-    public Constelacao(String nome){
+    private Golpe[] golpes = new Golpe[3];
+    private int ultimaPosicaoPreenchida = 0;
+
+    public Constelacao(String nome) {
         this.nome = nome;
     }
     
-    public void adicionarGolpe(Golpe golpe){
-        for(int i=0; i<this.golpe.length; i++){
-            if(this.golpe[i] == null ){
-                this.golpe[i] = golpe;
-                break;
-            }
-        }
-    }
-    
-    public Golpe getGolpes(){
-        return golpe[0];
-    }
-    
-    public String getNome(){
+    public String getNome() {
         return this.nome;
     }
-
+    
+    public Golpe[] getGolpes() {
+        return this.golpes;
+    }
+    
+    public void adicionarGolpe(Golpe golpe) {
+        golpes[ultimaPosicaoPreenchida++] = golpe;        
+    }
+    
 }
