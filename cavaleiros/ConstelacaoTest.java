@@ -13,9 +13,7 @@ public class ConstelacaoTest {
         gemeos.adicionarGolpe(new Golpe("Outra dimensão", 10));
         ArrayList <Golpe> golpes = gemeos.getGolpes();
         assertEquals(outraDimensao, golpes.get(0));
-        assertNull(golpes.get(1));
-        assertNull(golpes.get(1));
-        // TODO: assert null
+       
     }
 
     @Test
@@ -25,10 +23,10 @@ public class ConstelacaoTest {
         Golpe explosaoGalatica = new Golpe("Explosão Galáctica", 11);
         gemeos.adicionarGolpe(outraDimensao);
         gemeos.adicionarGolpe(explosaoGalatica);
-        Golpe[] golpes = gemeos.getGolpes();
-        assertEquals(outraDimensao, golpes[0]);
-        assertEquals(explosaoGalatica, golpes[1]);
-        assertNull(golpes[2]);
+        ArrayList <Golpe> golpes = gemeos.getGolpes();
+        assertEquals(outraDimensao, golpes.get(0));
+        assertEquals(explosaoGalatica, golpes.get(1));
+        //assertNull(golpes.get(2));
     }
 
     @Test
@@ -40,22 +38,27 @@ public class ConstelacaoTest {
         gemeos.adicionarGolpe(outraDimensao);
         gemeos.adicionarGolpe(explosaoGalatica);
         gemeos.adicionarGolpe(sataImperial);
-        Golpe[] golpes = gemeos.getGolpes();
-        assertEquals(outraDimensao, golpes[0]);
-        assertEquals(explosaoGalatica, golpes[1]);
-        assertEquals(sataImperial, golpes[2]);
+        ArrayList <Golpe> golpes = gemeos.getGolpes();
+        assertEquals(outraDimensao, golpes.get(0));
+        assertEquals(explosaoGalatica, golpes.get(1));
+        assertEquals(sataImperial, golpes.get(2));
     }
 
-    @Test(expected=ArrayIndexOutOfBoundsException.class)
+    @Test
     public void adicionarQuatroGolpes() {
         Constelacao gemeos = new Constelacao("Gêmeos");
         Golpe outraDimensao = new Golpe("Outra dimensão", 10);
         Golpe explosaoGalatica = new Golpe("Explosão Galáctica", 11);
         Golpe sataImperial = new Golpe("Satã Imperial", 60);
+        Golpe colera = new Golpe("Cólera do café intenso", 80);
         gemeos.adicionarGolpe(outraDimensao);
         gemeos.adicionarGolpe(explosaoGalatica);
         gemeos.adicionarGolpe(sataImperial);
-        gemeos.adicionarGolpe(new Golpe("Cólera do café intenso", 80));
+        gemeos.adicionarGolpe(colera);
+        assertEquals(outraDimensao, gemeos.getGolpes().get(0));
+        assertEquals(explosaoGalatica, gemeos.getGolpes().get(1));
+        assertEquals(sataImperial, gemeos.getGolpes().get(2));
+        assertEquals(colera, gemeos.getGolpes().get(3));
     }
 
 }

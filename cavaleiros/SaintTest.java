@@ -3,6 +3,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import java.security.InvalidParameterException;
+import java.util.ArrayList;
 
 public class SaintTest {
     @Test
@@ -120,11 +121,8 @@ public class SaintTest {
         Saint saga = new Saint("Saga", new Armadura(new Constelacao("Gêmeos"), Categoria.OURO));
         Golpe outraDimensao = new Golpe("Outra dimensão", 10);
         saga.aprenderGolpe(new Golpe("Outra dimensão", 10));
-        Golpe[] golpes = saga.getGolpes();
-        assertEquals(outraDimensao, golpes[0]);
-        assertNull(golpes[1]);
-        assertNull(golpes[2]);
-        // TODO: assert null
+        ArrayList <Golpe> golpes = saga.getGolpes();
+        assertEquals(outraDimensao, golpes.get(0));
     }
 
     @Test
@@ -134,10 +132,9 @@ public class SaintTest {
         Golpe explosaoGalatica = new Golpe("Explosão Galáctica", 11);
         saga.aprenderGolpe(outraDimensao);
         saga.aprenderGolpe(explosaoGalatica);
-        Golpe[] golpes = saga.getGolpes();
-        assertEquals(outraDimensao, golpes[0]);
-        assertEquals(explosaoGalatica, golpes[1]);
-        assertNull(golpes[2]);
+        ArrayList <Golpe> golpes = saga.getGolpes();
+        assertEquals(outraDimensao, golpes.get(0));
+        assertEquals(explosaoGalatica, golpes.get(1));
     }
 
     @Test
@@ -149,24 +146,24 @@ public class SaintTest {
         saga.aprenderGolpe(outraDimensao);
         saga.aprenderGolpe(explosaoGalatica);
         saga.aprenderGolpe(sataImperial);
-        Golpe[] golpes = saga.getGolpes();
-        assertEquals(outraDimensao, golpes[0]);
-        assertEquals(explosaoGalatica, golpes[1]);
-        assertEquals(sataImperial, golpes[2]);
+        ArrayList <Golpe> golpes = saga.getGolpes();
+        assertEquals(outraDimensao, golpes.get(0));
+        assertEquals(explosaoGalatica, golpes.get(1));
+        assertEquals(sataImperial, golpes.get(2));
     }
 
-    @Test(expected=ArrayIndexOutOfBoundsException.class)
-    public void aprenderQuatroGolpesLancaErro() throws Exception {
-        Saint saga = new Saint("Saga", new Armadura(new Constelacao("Gêmeos"), Categoria.OURO));
-        Golpe outraDimensao = new Golpe("Outra dimensão", 10);
-        Golpe explosaoGalatica = new Golpe("Explosão Galáctica", 11);
-        Golpe sataImperial = new Golpe("Satã Imperial", 42);
-        Golpe rasteira = new Golpe("Rasteira", 2);
-        saga.aprenderGolpe(outraDimensao);
-        saga.aprenderGolpe(explosaoGalatica);
-        saga.aprenderGolpe(sataImperial);
-        saga.aprenderGolpe(rasteira);
-    }
+    // @Test(expected=ArrayIndexOutOfBoundsException.class)
+    // public void aprenderQuatroGolpesLancaErro() throws Exception {
+        // Saint saga = new Saint("Saga", new Armadura(new Constelacao("Gêmeos"), Categoria.OURO));
+        // Golpe outraDimensao = new Golpe("Outra dimensão", 10);
+        // Golpe explosaoGalatica = new Golpe("Explosão Galáctica", 11);
+        // Golpe sataImperial = new Golpe("Satã Imperial", 42);
+        // Golpe rasteira = new Golpe("Rasteira", 2);
+        // saga.aprenderGolpe(outraDimensao);
+        // saga.aprenderGolpe(explosaoGalatica);
+        // saga.aprenderGolpe(sataImperial);
+        // saga.aprenderGolpe(rasteira);
+    // }
 
     @Test
     public void getProximoGolpeComUm() throws Exception {
