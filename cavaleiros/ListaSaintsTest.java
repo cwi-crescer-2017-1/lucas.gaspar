@@ -200,7 +200,7 @@ public class ListaSaintsTest {
         assertEquals(misty, resultado.get(1));
         assertEquals(shun, resultado.get(2));
     }
-    
+
     @Test
     public void ordenarComListaTotalmenteOrdenada() throws Exception {
         ListaSaints listaSaints = new ListaSaints();
@@ -219,7 +219,7 @@ public class ListaSaintsTest {
         assertEquals(misty, resultado.get(1));
         assertEquals(june, resultado.get(2));
     }
-    
+
     @Test
     public void ordenarComListaVazia() throws Exception {
         ListaSaints listaSaints = new ListaSaints();
@@ -227,7 +227,7 @@ public class ListaSaintsTest {
         ArrayList<Saint> resultado = listaSaints.todos();
         assertEquals(new ArrayList<Saint>(), resultado);
     }
-    
+
     @Test
     public void ordenarComListaApenasUm() throws Exception {
         ListaSaints listaSaints = new ListaSaints();
@@ -241,7 +241,7 @@ public class ListaSaintsTest {
         assertEquals(shun, resultado.get(0));
         assertEquals(1, resultado.size());
     }
-    
+
     @Test
     public void ordenarComListaDeValoresIguais() throws Exception {
         ListaSaints listaSaints = new ListaSaints();
@@ -257,8 +257,8 @@ public class ListaSaintsTest {
         assertEquals(misty, resultado.get(1));
         assertEquals(june, resultado.get(2));
     }
-    
-     @Test
+
+    @Test
     public void ordenarDescendenteComListaDesordenada() throws Exception {
         ListaSaints listaSaints = new ListaSaints();
         Saint june = new Saint("June", new Armadura(new Constelacao("Camaleão"), Categoria.BRONZE));
@@ -276,7 +276,7 @@ public class ListaSaintsTest {
         assertEquals(misty, resultado.get(1));
         assertEquals(shun, resultado.get(2));
     }
-    
+
     @Test 
     public void ordenarAscendentePassandoParametro() throws Exception {
         ListaSaints listaSaints = new ListaSaints();
@@ -295,12 +295,29 @@ public class ListaSaintsTest {
         assertEquals(shun, resultado.get(1));
         assertEquals(misty, resultado.get(2));
     }
-    
+
     @Test
     public void ordenarComListaVaziaPassandoParametro() throws Exception {
         ListaSaints listaSaints = new ListaSaints();
         listaSaints.ordenar(TipoOrdenacao.DESCENDENTE);
         ArrayList<Saint> resultado = listaSaints.todos();
         assertEquals(new ArrayList<Saint>(), resultado);
+    }
+
+    @Test
+    public void csvBeta() throws Exception {
+        ListaSaints lista = new ListaSaints();
+        Saint june = new Saint("June", new Armadura(new Constelacao("Camaleão"), Categoria.BRONZE));
+        june.setGenero(Genero.FEMININO);
+        june.perderVida(15.5);
+        lista.adicionar(june);
+
+        Saint dohko = new Saint("Dohko", new Armadura(new Constelacao(""), Categoria.OURO));
+        dohko.perderVida(90);
+        dohko.vestirArmadura();
+        lista.adicionar(dohko);
+
+        String csv = lista.getCSV();
+
     }
 }
