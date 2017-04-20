@@ -111,7 +111,7 @@ public class ListaSaints {
         } while (posicoesSendoTrocadas);   
     }
     
-    public ArrayList<Saint> ordernar(TipoOrdenacao tipo){
+    public void ordenar(TipoOrdenacao tipo){
         if(tipo.equals(TipoOrdenacao.DESCENDENTE)){
             boolean posicoesSendoTrocadas;
         do {
@@ -128,6 +128,8 @@ public class ListaSaints {
             }
         } while (posicoesSendoTrocadas);
         }
-        return this.saints;
+        else{
+            this.ordenar();
+        }
     }
 }
