@@ -1,7 +1,6 @@
 import java.util.ArrayList;
 import java.util.stream.Collectors;
 
-
 public class ListaSaints {
     private ArrayList<Saint> saints = new ArrayList<Saint>();
 
@@ -85,7 +84,7 @@ public class ListaSaints {
         return menorVida;
     }
 
-    public void ordenar() {
+    public void ordenar(TipoOrdenacao tipoOrdenacao) {
         /*
          * BubbleSort
          * Complexidade: O(n^2)
@@ -95,70 +94,53 @@ public class ListaSaints {
          * i0: [3] [4] [17] [10] [60]
          * i1: [3] [4] [10] [17] [60]
          */
-
+        boolean ascendente = tipoOrdenacao == TipoOrdenacao.ASCENDENTE;
         boolean posicoesSendoTrocadas;
         do {
             posicoesSendoTrocadas = false;
             for (int i = 0; i < this.saints.size() - 1; i++) {
                 Saint atual = this.saints.get(i);
                 Saint proximo = this.saints.get(i + 1);
-                boolean precisaTrocar = atual.getVida() > proximo.getVida();
+                boolean precisaTrocar = 
+                    ascendente ? atual.getVida() > proximo.getVida() :
+                    atual.getVida() < proximo.getVida();
+
                 if (precisaTrocar) {
                     this.saints.set(i, proximo);
                     this.saints.set(i + 1, atual);
                     posicoesSendoTrocadas = true;
                 }
             }
-        } while (posicoesSendoTrocadas);   
+        } while (posicoesSendoTrocadas); 
     }
 
-    public void ordenar(TipoOrdenacao tipo){
-        if(tipo.equals(TipoOrdenacao.DESCENDENTE)){
-            boolean posicoesSendoTrocadas;
-            do {
-                posicoesSendoTrocadas = false;
-                for (int i = 0; i < this.saints.size() - 1; i++) {
-                    Saint atual = this.saints.get(i);
-                    Saint proximo = this.saints.get(i + 1);
-                    boolean precisaTrocar = atual.getVida() < proximo.getVida();
-                    if (precisaTrocar) {
-                        this.saints.set(i, proximo);
-                        this.saints.set(i + 1, atual);
-                        posicoesSendoTrocadas = true;
-                    }
-                }
-            } while (posicoesSendoTrocadas);
+    public void ordenar() {
+        this.ordenar(TipoOrdenacao.ASCENDENTE);
+    }
+
+    public String getCSV() {
+        if (this.saints.isEmpty()) {
+            return "";
         }
-        else{
-            this.ordenar();
+
+        String separador = System.getProperty("line.separator");
+        StringBuilder builder = new StringBuilder(512);
+
+        builder.append(this.saints.get(0).getCSV());
+        for (int i = 1; i < this.saints.size(); i++) {
+            Saint saint = this.saints.get(i);
+            //resultado += separador + saint.getCSV();
+            //builder.append(String.format("%s%s", separador, saint.getCSV()));
+            builder.append(separador);
+            builder.append(saint.getCSV());
         }
+
+        return builder.toString();
     }
 
-    public String getCSV(){ 
-      
-        String CSV_SEPARATOR = ",";
-        StringBuffer arquivoCSV = new StringBuffer();
-        String newline = System.getProperty("line.separator");
+    /*@Override
+    public String toString() {
+    return String.valueOf(this.saints.size());
+    }*/
 
-            for (Saint saint : this.saints)
-            {
-                String linha;
-                StringBuffer oneLine = new StringBuffer();
-                oneLine.append(saint.getNome());
-                oneLine.append(CSV_SEPARATOR);
-                oneLine.append(saint.getVida());
-                oneLine.append(CSV_SEPARATOR);
-                oneLine.append(saint.getArmadura().getConstelacao().getNome());
-                oneLine.append(CSV_SEPARATOR);
-                oneLine.append(saint.getStatus());
-                oneLine.append(CSV_SEPARATOR);
-                oneLine.append(saint.getGenero());
-                oneLine.append(CSV_SEPARATOR);
-                oneLine.append(saint.getArmaduraVestida());
-                oneLine.append(System.lineSeparator());
-                linha = oneLine.toString();
-                arquivoCSV.append(linha);
-            }
-            return arquivoCSV.toString();
-    }
 }
