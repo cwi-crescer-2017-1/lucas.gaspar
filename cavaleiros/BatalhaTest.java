@@ -84,4 +84,22 @@ public class BatalhaTest {
         assertEquals(70, mascaraMorte.getVida(), 0.01);
     }
     
+    
+    @Test
+    public void saintMataNoPrimeiroGolpe() throws Exception {
+        // Arrange
+        Saint ikki = new BronzeSaint("Ikki", "Fênix");
+        Saint mascaraMorte = new SilverSaint("Máscara da Morte", "Lagartixa");
+        mascaraMorte.vestirArmadura();
+        Batalha batalha = new Batalha(ikki, mascaraMorte);
+        ikki.getConstelacao().adicionarGolpe(new Golpe("Meteoro de Pégasus",10));
+        mascaraMorte.getConstelacao().adicionarGolpe(new Golpe("Meteoro de Pégasus",40));
+        // Act
+        // Act
+        batalha.iniciar();
+        // Assert
+        assertEquals(0, ikki.getVida(), 0.01);
+        assertEquals(100, mascaraMorte.getVida(), 0.01);
+    }
+    
 }
