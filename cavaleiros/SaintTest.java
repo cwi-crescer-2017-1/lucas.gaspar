@@ -194,7 +194,7 @@ public class SaintTest {
 
     @Test
     public void getProximoGolpeComTres() throws Exception {
-       Saint saga = new GoldSaint("Saga", "Gêmeos");
+        Saint saga = new GoldSaint("Saga", "Gêmeos");
         Golpe outraDimensao = new Golpe("Outra dimensão", 10);
         Golpe explosaoGalatica = new Golpe("Explosão Galáctica", 11);
         Golpe sataImperial = new Golpe("Satã Imperial", 42);

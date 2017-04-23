@@ -75,7 +75,7 @@ public abstract class Saint {
         return this.qtdSentidosDespertados;
     }
     
-    private Constelacao getConstelacao() {
+    public Constelacao getConstelacao() {
         return this.armadura.getConstelacao();
     }
     
