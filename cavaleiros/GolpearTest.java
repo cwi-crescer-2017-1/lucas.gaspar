@@ -10,7 +10,7 @@ public class GolpearTest{
         Saint marin = new SilverSaint("Marin", "Águia");
         june.vestirArmadura();
         june.getConstelacao().adicionarGolpe(new Golpe("Meteoro de Pégasus",10));
-        Golpear g1 = new Golpear(june, marin);
+        Movimento g1 = new Golpear(june, marin);
         g1.executar();
         assertEquals(60, marin.getVida(), 0.01);
         assertEquals(100, june.getVida(), 0.01);
@@ -21,7 +21,7 @@ public class GolpearTest{
         Saint june = new GoldSaint("June", "Libra");
         Saint marin = new SilverSaint("Marin", "Águia");
         june.getConstelacao().adicionarGolpe(new Golpe("Meteoro de Pégasus",10));
-        Golpear g1 = new Golpear(june, marin);
+        Movimento g1 = new Golpear(june, marin);
         g1.executar();
         assertEquals(90, marin.getVida(), 0.01);
         assertEquals(100, june.getVida(), 0.01);

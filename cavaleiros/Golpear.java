@@ -13,6 +13,6 @@ public class Golpear implements Movimento {
            int multiplicar = this.golpeador.getArmadura().getCategoria().getValor();
            dano = dano*(multiplicar + 1);
        } 
-       golpeado.perderVida(dano);
+       this.golpeado.perderVida(dano);
    }
 }

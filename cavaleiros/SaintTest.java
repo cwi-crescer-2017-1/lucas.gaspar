@@ -249,7 +249,7 @@ public class SaintTest {
     }
     
     @Test
-    public void addProximoMovimentoFuncionaEGetMovimentoFuncionam() throws Exception {
+    public void addProximoMovimentoFuncionaEGetMovimentoFunciona() throws Exception {
         Saint june = new GoldSaint("June", "Libra");
         Movimento movimento = new VestirArmadura(june);
         june.adicionarMovimento(movimento);
