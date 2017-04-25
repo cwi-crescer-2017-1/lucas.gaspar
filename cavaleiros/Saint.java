@@ -9,19 +9,22 @@ public abstract class Saint {
     private Status status = Status.VIVO;
     private double vida = 100.;
     protected int qtdSentidosDespertados;
-    private int acumuladorProximoGolpe = 0;
-    private int acumuladorProximoMovimento = 0;
-    private ArrayList<Movimento> movimentos = new ArrayList<Movimento>();
+    private int acumuladorProximoGolpe = 0, acumuladorProximoMovimento = 0;
+    private ArrayList<Movimento> movimentos = new ArrayList<>();
+    private static int qtdSaints = 0;
+    private int id;
 
-    public Saint (String nome, String constelacao) throws Exception {
-       
-    }
-    
-    public Saint(String nome, Armadura armadura) throws Exception {
+    protected Saint(String nome, Armadura armadura) throws Exception {
         this.nome = nome;
         this.armadura = armadura;
+        Saint.qtdSaints++;
+        this.id = Saint.qtdSaints;
         /*int valorCategoria = this.armadura.getCategoria().getValor();
         this.qtdSentidosDespertados += valorCategoria;*/
+    }
+    
+    public static int getQtdSaints() {
+        return Saint.qtdSaints;
     }
 
     public void vestirArmadura() {
@@ -77,7 +80,7 @@ public abstract class Saint {
         return this.qtdSentidosDespertados;
     }
     
-    public Constelacao getConstelacao() {
+    private Constelacao getConstelacao() {
         return this.armadura.getConstelacao();
     }
     
@@ -123,14 +126,25 @@ public abstract class Saint {
             this.armaduraVestida;*/
     }
     
-    public void adicionarMovimento(Movimento movimento){
-        movimentos.add(movimento);
+    public void adicionarMovimento(Movimento movimento) {
+        this.movimentos.add(movimento);
     }
     
-    public Movimento getProximoMovimento(){
+    public Movimento getProximoMovimento() {
         int posicao = this.acumuladorProximoMovimento % this.movimentos.size();
         this.acumuladorProximoMovimento++;
-        return this.movimentos.get(posicao);
+        return movimentos.get(posicao);
+    }
+    
+
+    // "agendando" execução do golpe no saint passado por parâmetro
+    // o golpe de fato só será executado na batalha.
+    public void golpear(Saint golpeado) {
+        this.adicionarMovimento(new Golpear(this, golpeado));
+    }
+    
+    public int getId(){
+        return this.id;
     }
 
 }

@@ -131,8 +131,7 @@ public class ListaSaints {
             Saint saint = this.saints.get(i);
             //resultado += separador + saint.getCSV();
             //builder.append(String.format("%s%s", separador, saint.getCSV()));
-            
-            builder.append("\n");
+            builder.append(separador);
             builder.append(saint.getCSV());
         }
 

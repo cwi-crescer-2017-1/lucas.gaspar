@@ -10,7 +10,6 @@ public class SaintTest {
     public void vestirArmaduraDeixaArmaduraVestida() throws Exception {
         // AAA
         // 1. Arrange - Montagem dos dados de teste
-        Armadura escorpiao = new Armadura(new Constelacao("Escorpião"), Categoria.OURO);
         Saint milo = new GoldSaint("Milo", "Escorpião");
         // 2. Act - Invocar a ação a ser testada
         milo.vestirArmadura();
@@ -27,7 +26,6 @@ public class SaintTest {
 
     @Test
     public void aoCriarSaintGeneroENaoInformado() throws Exception {
-        Armadura virgem = new Armadura(new Constelacao("Virgem"), Categoria.OURO);
         Saint shaka = new GoldSaint("Shaka", "Virgem");
         assertEquals(Genero.NAO_INFORMADO, shaka.getGenero());
     }
@@ -56,7 +54,7 @@ public class SaintTest {
     @Test
     public void perderDanoComValor10() throws Exception {
         // Arrange
-         Saint shiryu = new BronzeSaint("Shiryu", "Dragão");
+        Saint shiryu = new BronzeSaint("Shiryu", "Dragão");
         // Act
         shiryu.perderVida(10);
         // Assert
@@ -66,7 +64,7 @@ public class SaintTest {
     @Test
     public void perderDanoComValor100() throws Exception {
         // Arrange
-         Saint shiryu = new BronzeSaint("Shiryu", "Dragão");
+        Saint shiryu = new BronzeSaint("Shiryu", "Dragão");
         // Act
         shiryu.perderVida(100);
         // Assert
@@ -232,13 +230,13 @@ public class SaintTest {
 
     @Test
     public void getCSVSemArmaduraVestida() throws Exception {
-        Saint june = new GoldSaint("June", "Libra");
+        Saint june = new BronzeSaint("June", "");
         june.setGenero(Genero.FEMININO);
         june.perderVida(15.5);
-        String esperado = "June,84.5,Libra,OURO,VIVO,FEMININO,false";
+        String esperado = "June,84.5,,BRONZE,VIVO,FEMININO,false";
         assertEquals(esperado, june.getCSV());
     }
-    
+
     @Test
     public void getCSVComNomeNulo() throws Exception {
         Saint june = new BronzeSaint(null, "Camaleão");
@@ -247,17 +245,55 @@ public class SaintTest {
         String esperado = "null,84.5,Camaleão,BRONZE,VIVO,FEMININO,false";
         assertEquals(esperado, june.getCSV());
     }
-    
+
+    @Test(expected=ArithmeticException.class)
+    public void getProximoMovimentoComListaVazia() throws Exception {
+        Saint hyoga = new BronzeSaint("Hyoga", "Cisne");
+        Movimento movimento = hyoga.getProximoMovimento();
+    }
+
     @Test
-    public void addProximoMovimentoFuncionaEGetMovimentoFunciona() throws Exception {
-        Saint june = new GoldSaint("June", "Libra");
-        Movimento movimento = new VestirArmadura(june);
-        june.adicionarMovimento(movimento);
-        assertEquals(movimento, june.getProximoMovimento());
+    public void getProximoMovimentoComUmMovimento() throws Exception {
+        Saint hyoga = new BronzeSaint("Hyoga", "Cisne");
+        Movimento vestirArmadura = new VestirArmadura(hyoga);
+        hyoga.adicionarMovimento(vestirArmadura);
+        assertEquals(vestirArmadura, hyoga.getProximoMovimento());
     }
     
+    @Test
+    public void getProximoMovimentoDuasVezesComUmMovimento() throws Exception {
+        Saint hyoga = new BronzeSaint("Hyoga", "Cisne");
+        Movimento vestirArmadura = new VestirArmadura(hyoga);
+        hyoga.adicionarMovimento(vestirArmadura);
+        hyoga.getProximoMovimento();
+        assertEquals(vestirArmadura, hyoga.getProximoMovimento());
+    }
     
+    @Test
+    public void golpearDeveAdicionarMovimentoGolpear() throws Exception {
+        Saint saga = new GoldSaint("Saga", "Gêmeos");
+        saga.aprenderGolpe(new Golpe("Outra dimensão", 10));
+        Saint seiya = new BronzeSaint("Seiya", "Pégaso");
+        saga.golpear(seiya);
+        Golpear golpear = new Golpear(saga, seiya);
+        assertEquals(golpear, saga.getProximoMovimento());
+    }
     
+    @Test
+    public void testeGetQtdSaints() throws Exception {
+        Saint saga = new GoldSaint("Saga", "Gêmeos");
+        saga.aprenderGolpe(new Golpe("Outra dimensão", 10));
+        Saint seiya = new BronzeSaint("Seiya", "Pégaso");
+        saga.golpear(seiya);
+        Golpear golpear = new Golpear(saga, seiya);
+        assert(Saint.getQtdSaints()>0);
+    }
+    
+    @Test
+    public void testeidSaint() throws Exception {
+        Saint saga = new GoldSaint("Saga", "Gêmeos");
+        assertEquals(47, saga.getId());
+    }
 
 }
 
