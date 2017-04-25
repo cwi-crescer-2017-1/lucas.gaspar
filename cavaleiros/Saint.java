@@ -12,13 +12,14 @@ public abstract class Saint {
     private int acumuladorProximoGolpe = 0, acumuladorProximoMovimento = 0;
     private ArrayList<Movimento> movimentos = new ArrayList<>();
     private static int qtdSaints = 0;
+    private static int idProximoSaint = 1;
     private int id;
 
     protected Saint(String nome, Armadura armadura) throws Exception {
         this.nome = nome;
         this.armadura = armadura;
         Saint.qtdSaints++;
-        this.id = Saint.qtdSaints;
+        this.id = Saint.idProximoSaint++;
         /*int valorCategoria = this.armadura.getCategoria().getValor();
         this.qtdSentidosDespertados += valorCategoria;*/
     }

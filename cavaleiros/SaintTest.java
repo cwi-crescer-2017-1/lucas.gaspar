@@ -289,12 +289,6 @@ public class SaintTest {
         assert(Saint.getQtdSaints()>0);
     }
     
-    @Test
-    public void testeidSaint() throws Exception {
-        Saint saga = new GoldSaint("Saga", "Gêmeos");
-        assertEquals(47, saga.getId());
-    }
-
 }
 
 
