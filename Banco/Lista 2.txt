@@ -1,0 +1,27 @@
+Exercício: 1
+
+select idempregado, nomeempregado
+from empregado
+order by dataadmissao
+
+Exercício 2: 
+
+select * from empregado
+where comissao is null
+order by salario
+
+Exercício 3:
+
+select IDEmpregado, nomeempregado,
+salario*13 as salarioAnual,
+comissao*12 as comissaoAnual,
+(salario*13)+(comissao*12) as rendaAnual
+from empregado
+
+Exercício 4:
+
+select IDEmpregado, nomeempregado, cargo, salario as salarioMensal
+from empregado
+where (salario*13)<18500.00
+or
+cargo = 'Atendente'
