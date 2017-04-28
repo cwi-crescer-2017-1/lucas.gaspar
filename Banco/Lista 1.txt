@@ -1,0 +1,35 @@
+Exercicio 1:
+
+select *
+into CidadeAux
+from Cidade 
+
+Exercício 2:
+
+insert into Cidadeaux
+select * from cidade
+where uf like 'RS'
+
+Exercício 3:
+
+CREATE TABLE Produto (
+    CodigoProduto int IDENTITY not null,
+    Nome varchar(20),
+    NomeDescritivo varchar(20),
+	DataDeCriacao date,
+	LocalNoEstoque varchar(40),
+	Quantidade int,
+	Preco numeric,
+	
+	constraint PK_CodigoProduto Primary Key (CodigoProduto)
+)
+
+Exercício 4:
+
+Registro 1
+insert into produto (nome, nomeDescritivo, datadecriacao, localnoestoque, quantidade, preco)
+values ('Coca-Cola', 'Refrigerante de Cola', '2017-05-01', 'Ala E', 150, 5.50)
+
+Registro 2
+insert into produto (nome, nomeDescritivo, datadecriacao, localnoestoque, quantidade, preco)
+values ('Doritos', 'Salgadinho queijo', '2017-04-01', 'Ala H', 100, 4)

@@ -1,1 +1,13 @@
 Banco - André Nunes - Segundo módulo 
+
+crescer verá principalmente oracle e SQL server.
+
+sequencia desempenho em algumas vezes maior que identity.
+
+4 tipos de constraints: primary key, unique(pode ser opicional mas se existir tem que ser única), foreign key, check(um dado
+precisa respeitar uma condição).
+
+char(n) - varchar(n) - útil apenas para aplicações globais. Guarda o dobro de espaço
+
+ddl - data definition language (create table, drop table)
+dml - data manipulation language (insert, update, delete)
