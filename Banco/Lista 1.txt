@@ -19,7 +19,7 @@ CREATE TABLE Produto (
 	DataDeCriacao date,
 	LocalNoEstoque varchar(40),
 	Quantidade int,
-	Preco numeric,
+	Preco decimal (18,2),
 	
 	constraint PK_CodigoProduto Primary Key (CodigoProduto)
 )
