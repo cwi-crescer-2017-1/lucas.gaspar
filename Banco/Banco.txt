@@ -11,3 +11,7 @@ char(n) - varchar(n) - útil apenas para aplicações globais. Guarda o dobro de es
 
 ddl - data definition language (create table, drop table)
 dml - data manipulation language (insert, update, delete)
+
+count, min, max, sum, avg - Principais funções
+
+distinct elimina linhas da consulta que são iguais.
