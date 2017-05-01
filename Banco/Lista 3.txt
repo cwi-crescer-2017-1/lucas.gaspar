@@ -1,0 +1,27 @@
+Exercicio 1
+
+select idempregado, nomeempregado,  datediff(year, dataNascimento, dataadmissao) as idadeNaAdmissao from empregado
+where dataAdmissao like '%1980%'
+
+Exercício 2
+
+Select top 1 Cargo, COUNT(1) as Total
+From Empregado
+Group By Cargo
+order by total desc
+
+Exercício 3
+
+select uf, count(1) as cidadesExistentes
+from cidade
+group by uf
+
+Exercicio 4
+
+insert into departamento 
+(iddepartamento, nomeDepartamento, localizacao)
+values (70, 'Inovação', 'SAO LEOPOLDO')
+
+update empregado
+set iddepartamento = 70
+where MONTH(dataAdmissao) = 12 and cargo not like 'Atendente'
