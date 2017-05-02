@@ -1,0 +1,35 @@
+Exercício 1
+
+select e.NomeEmpregado, d.NomeDepartamento, g.NomeEmpregado as NomeGerente, d.NomeDepartamento as DepartamentoGerente
+from empregado e
+inner join empregado g on e.IDEmpregado = g.IDGerente
+inner join Departamento d on e.IDDepartamento = d.IDDepartamento
+
+Exercício 2
+
+select d.iddepartamento, d.nomeDepartamento
+from departamento d
+inner join Empregado e on e.IDDepartamento = d.IDDepartamento 
+where e.salario = (select max(salario) from empregado where Empregado.IDDepartamento is not null)
+group by d.IDDepartamento, d.NomeDepartamento
+
+Exercício 3
+
+backup do banco
+select * into empregadoBackup
+from empregado
+
+update e
+set e.salario = e.salario * 1.173
+from Empregado e
+inner join Departamento d on e.IDDepartamento = d.IDDepartamento and d.Localizacao = 'SAO PAULO'
+
+Exercício 4
+
+select nome, uf 
+from cidade
+group by nome, uf
+having count(*) > 1
+
+Exercício 5
+

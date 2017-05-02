@@ -15,3 +15,12 @@ dml - data manipulation language (insert, update, delete)
 count, min, max, sum, avg - Principais funções
 
 distinct elimina linhas da consulta que são iguais.
+
+INNER join - ambas as tabelas com um registro existente.
+LEFT join or RIGHT join - força exibir todos os registros de uma tabela, mesmo que seja null na outra
+
+EXISTS or in(subquery) - parecidos mas diferentes.
+
+union - armazena em memória, ordena e elimina os duplicados (distinct)
+
+union all - projeta e não tira os iguais
