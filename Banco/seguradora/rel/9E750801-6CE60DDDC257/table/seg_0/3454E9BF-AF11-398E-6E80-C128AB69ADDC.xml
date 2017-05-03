@@ -1,0 +1,74 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="3454E9BF-AF11-398E-6E80-C128AB69ADDC" name="Cliente">
+<createdBy>lucas.gaspar</createdBy>
+<createdTime>2017-05-03 19:28:13 UTC</createdTime>
+<generatorID>C58EE06A-9063-B77D-DBEE-C8EB0B59BEDC</generatorID>
+<ownerDesignName>seguradora</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="IDCliente" id="74DC5D51-C12C-4ADF-6586-531D1ECF2472">
+<createdBy>lucas.gaspar</createdBy>
+<createdTime>2017-05-03 19:28:13 UTC</createdTime>
+<generatorID>F232597A-7A5A-5F5D-4E32-86771A587353</generatorID>
+<ownerDesignName>seguradora</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nome" id="61972D7D-DC68-1B47-95E4-D416FB762AD3">
+<createdBy>lucas.gaspar</createdBy>
+<createdTime>2017-05-03 19:28:13 UTC</createdTime>
+<generatorID>D2F41C0E-1A36-7CF7-AB69-3DAC5C0D7BF6</generatorID>
+<ownerDesignName>seguradora</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="endereco" id="F13212A3-2035-73FB-A0ED-DDE93F7E58D0">
+<createdBy>lucas.gaspar</createdBy>
+<createdTime>2017-05-03 19:28:13 UTC</createdTime>
+<generatorID>047AF4FE-480B-A0C1-0438-431FF7E02684</generatorID>
+<ownerDesignName>seguradora</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="cpf" id="853CAAB9-C7CD-4363-F566-62F6A1941D26">
+<createdBy>lucas.gaspar</createdBy>
+<createdTime>2017-05-03 19:28:13 UTC</createdTime>
+<generatorID>754320A1-3282-6A98-BDF0-ACE25DA5A50B</generatorID>
+<ownerDesignName>seguradora</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>14</dataTypeSize>
+<ownDataTypeParameters>14,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="A7E7612C-BBE8-5BE0-AC69-5793B66D3CE0" name="Cliente_PK">
+<createdBy>lucas.gaspar</createdBy>
+<createdTime>2017-05-03 19:28:13 UTC</createdTime>
+<generatorID>033220DC-C040-F470-FFA8-78C173FF0806</generatorID>
+<ownerDesignName>seguradora</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="74DC5D51-C12C-4ADF-6586-531D1ECF2472"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

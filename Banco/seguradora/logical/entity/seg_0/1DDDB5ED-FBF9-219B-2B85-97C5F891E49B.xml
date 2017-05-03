@@ -1,0 +1,84 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="1DDDB5ED-FBF9-219B-2B85-97C5F891E49B" name="Beneficiarios">
+<createdBy>lucas.gaspar</createdBy>
+<createdTime>2017-05-03 19:16:57 UTC</createdTime>
+<ownerDesignName>seguradora</ownerDesignName>
+<engineerTo>
+<item key="9E750801-6A7C-D04B-96FE-6CE60DDDC257" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="IDBeneficiario" id="F2185571-F051-2B80-0CCC-657369E6A366">
+<createdBy>lucas.gaspar</createdBy>
+<createdTime>2017-05-03 19:17:24 UTC</createdTime>
+<ownerDesignName>seguradora</ownerDesignName>
+<engineerTo>
+<item key="9E750801-6A7C-D04B-96FE-6CE60DDDC257" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nome" id="0D7E56C6-2E7D-A7C0-46BC-C14B5868CD1C">
+<createdBy>lucas.gaspar</createdBy>
+<createdTime>2017-05-03 19:17:51 UTC</createdTime>
+<ownerDesignName>seguradora</ownerDesignName>
+<engineerTo>
+<item key="9E750801-6A7C-D04B-96FE-6CE60DDDC257" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="cpf" id="398B684B-9524-5AFF-4CF0-14AEFD6328D2">
+<createdBy>lucas.gaspar</createdBy>
+<createdTime>2017-05-03 19:18:34 UTC</createdTime>
+<ownerDesignName>seguradora</ownerDesignName>
+<engineerTo>
+<item key="9E750801-6A7C-D04B-96FE-6CE60DDDC257" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15</dataTypeSize>
+<ownDataTypeParameters>15,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="endereco" id="E4F5A0B2-34CD-7D9F-2877-C8274AAB6FB3">
+<createdBy>lucas.gaspar</createdBy>
+<createdTime>2017-05-03 19:19:17 UTC</createdTime>
+<ownerDesignName>seguradora</ownerDesignName>
+<engineerTo>
+<item key="9E750801-6A7C-D04B-96FE-6CE60DDDC257" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>40</dataTypeSize>
+<ownDataTypeParameters>40,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="E6DFDA69-4A61-6F74-304C-16161D4E8224" name="Beneficiarios PK">
+<createdBy>lucas.gaspar</createdBy>
+<createdTime>2017-05-03 19:18:15 UTC</createdTime>
+<ownerDesignName>seguradora</ownerDesignName>
+<engineerTo>
+<item key="9E750801-6A7C-D04B-96FE-6CE60DDDC257" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>F2185571-F051-2B80-0CCC-657369E6A366</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

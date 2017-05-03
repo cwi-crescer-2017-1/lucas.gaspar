@@ -1,0 +1,122 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="7A76C4E0-74F4-2102-8DE2-4515ED61DD98" name="Seguro">
+<createdBy>lucas.gaspar</createdBy>
+<createdTime>2017-05-03 19:28:13 UTC</createdTime>
+<generatorID>09B38B83-5498-85A3-192F-2479403908BB</generatorID>
+<ownerDesignName>seguradora</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="IDSeguro" id="7235AB34-453E-4E98-006D-073FD88784D9">
+<createdBy>lucas.gaspar</createdBy>
+<createdTime>2017-05-03 19:28:13 UTC</createdTime>
+<generatorID>82CB3F54-93E3-05AD-E429-286586F6F726</generatorID>
+<ownerDesignName>seguradora</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="data_inicio_contrato" id="B7929E31-834D-E047-97DD-01FE0A9C17FF">
+<createdBy>lucas.gaspar</createdBy>
+<createdTime>2017-05-03 19:28:13 UTC</createdTime>
+<generatorID>7D569B6E-3337-A70E-EB55-DCAFAA5819AC</generatorID>
+<ownerDesignName>seguradora</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="data_final_contrato" id="69736915-EA23-F6FA-A79C-5DB76FDEB681">
+<createdBy>lucas.gaspar</createdBy>
+<createdTime>2017-05-03 19:28:13 UTC</createdTime>
+<generatorID>26D5AAA2-E2AA-0716-35C7-17A502493340</generatorID>
+<ownerDesignName>seguradora</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="numero_do_contrato" id="54347335-C988-E1AC-A1E7-05E862AA5DBF">
+<createdBy>lucas.gaspar</createdBy>
+<createdTime>2017-05-03 19:28:13 UTC</createdTime>
+<generatorID>F88F8E03-AE0E-C084-0816-1BE75A525977</generatorID>
+<ownerDesignName>seguradora</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="Tipo_Seguro_IDTipo" id="46107E4B-4058-BFD1-A98F-894F0D7C62F2">
+<createdBy>lucas.gaspar</createdBy>
+<createdTime>2017-05-03 19:28:13 UTC</createdTime>
+<generatorID>2D2806E1-FBFC-8BCB-B43D-8415D6CFE636</generatorID>
+<ownerDesignName>seguradora</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E9941365-B56D-0A85-8D01-96A11E760314" referredColumn="1B7ECD0C-AE5B-E882-99A8-C541C83B2E16"/>
+</associations>
+</Column>
+<Column name="Empresa_IDEmpresa" id="9666B52C-9A94-8609-796F-0CE991248A69">
+<createdBy>lucas.gaspar</createdBy>
+<createdTime>2017-05-03 19:28:13 UTC</createdTime>
+<generatorID>141F0105-ABE9-93A3-DFE2-3CCB0A40F0F6</generatorID>
+<ownerDesignName>seguradora</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="BF9DFF52-5599-85C5-98AC-A28043500C54" referredColumn="CFE1C4AF-3D46-53E1-797A-EA61FE4967BC"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="6E84761D-926F-7815-1D61-B25BFF13A24E" name="Seguro_PK">
+<createdBy>lucas.gaspar</createdBy>
+<createdTime>2017-05-03 19:28:13 UTC</createdTime>
+<generatorID>C0262C99-04CE-E6CD-BB3E-560204480EA4</generatorID>
+<ownerDesignName>seguradora</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7235AB34-453E-4E98-006D-073FD88784D9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F4250CB5-54C2-69AF-7462-043D75EECB7A" name="Seguro_Empresa_FK">
+<createdBy>lucas.gaspar</createdBy>
+<createdTime>2017-05-03 19:28:13 UTC</createdTime>
+<generatorID>601D4BE1-0893-8EBC-F8FE-B22C13ED40F9</generatorID>
+<ownerDesignName>seguradora</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9666B52C-9A94-8609-796F-0CE991248A69"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B6E3005E-DFEA-73EB-917C-01D56FB23B07" name="Seguro_Tipo_Seguro_FK">
+<createdBy>lucas.gaspar</createdBy>
+<createdTime>2017-05-03 19:28:13 UTC</createdTime>
+<generatorID>6E832898-839C-1A2D-6B9D-B93EEE3EAE18</generatorID>
+<ownerDesignName>seguradora</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="46107E4B-4058-BFD1-A98F-894F0D7C62F2"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

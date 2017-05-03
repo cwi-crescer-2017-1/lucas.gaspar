@@ -1,0 +1,110 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="09B38B83-5498-85A3-192F-2479403908BB" name="Seguro">
+<createdBy>lucas.gaspar</createdBy>
+<createdTime>2017-05-03 19:00:53 UTC</createdTime>
+<ownerDesignName>seguradora</ownerDesignName>
+<engineerTo>
+<item key="9E750801-6A7C-D04B-96FE-6CE60DDDC257" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="IDSeguro" id="82CB3F54-93E3-05AD-E429-286586F6F726">
+<createdBy>lucas.gaspar</createdBy>
+<createdTime>2017-05-03 19:03:00 UTC</createdTime>
+<ownerDesignName>seguradora</ownerDesignName>
+<engineerTo>
+<item key="9E750801-6A7C-D04B-96FE-6CE60DDDC257" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="data_inicio_contrato" id="7D569B6E-3337-A70E-EB55-DCAFAA5819AC">
+<createdBy>lucas.gaspar</createdBy>
+<createdTime>2017-05-03 19:03:20 UTC</createdTime>
+<ownerDesignName>seguradora</ownerDesignName>
+<engineerTo>
+<item key="9E750801-6A7C-D04B-96FE-6CE60DDDC257" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="data_final_contrato" id="26D5AAA2-E2AA-0716-35C7-17A502493340">
+<createdBy>lucas.gaspar</createdBy>
+<createdTime>2017-05-03 19:03:51 UTC</createdTime>
+<ownerDesignName>seguradora</ownerDesignName>
+<engineerTo>
+<item key="9E750801-6A7C-D04B-96FE-6CE60DDDC257" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="numero_do_contrato" id="F88F8E03-AE0E-C084-0816-1BE75A525977">
+<createdBy>lucas.gaspar</createdBy>
+<createdTime>2017-05-03 19:04:07 UTC</createdTime>
+<ownerDesignName>seguradora</ownerDesignName>
+<engineerTo>
+<item key="9E750801-6A7C-D04B-96FE-6CE60DDDC257" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="IDTipo" id="2D2806E1-FBFC-8BCB-B43D-8415D6CFE636">
+<createdBy>lucas.gaspar</createdBy>
+<createdTime>2017-05-03 19:15:03 UTC</createdTime>
+<generatorID>6E832898-839C-1A2D-6B9D-B93EEE3EAE18</generatorID>
+<ownerDesignName>seguradora</ownerDesignName>
+<engineerTo>
+<item key="9E750801-6A7C-D04B-96FE-6CE60DDDC257" value="true"/>
+</engineerTo>
+<referedAttribute>1356EB6C-5BD2-F803-2D13-3E4E4758D7B2</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="IDEmpresa" id="141F0105-ABE9-93A3-DFE2-3CCB0A40F0F6">
+<createdBy>lucas.gaspar</createdBy>
+<createdTime>2017-05-03 19:15:45 UTC</createdTime>
+<generatorID>601D4BE1-0893-8EBC-F8FE-B22C13ED40F9</generatorID>
+<ownerDesignName>seguradora</ownerDesignName>
+<engineerTo>
+<item key="9E750801-6A7C-D04B-96FE-6CE60DDDC257" value="true"/>
+</engineerTo>
+<referedAttribute>E07F973B-E747-3A92-2198-C95525D95425</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="C0262C99-04CE-E6CD-BB3E-560204480EA4" name="Seguro PK">
+<createdBy>lucas.gaspar</createdBy>
+<createdTime>2017-05-03 19:03:16 UTC</createdTime>
+<ownerDesignName>seguradora</ownerDesignName>
+<engineerTo>
+<item key="9E750801-6A7C-D04B-96FE-6CE60DDDC257" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>82CB3F54-93E3-05AD-E429-286586F6F726</attributeRef>
+<attributeRef>26D5AAA2-E2AA-0716-35C7-17A502493340</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

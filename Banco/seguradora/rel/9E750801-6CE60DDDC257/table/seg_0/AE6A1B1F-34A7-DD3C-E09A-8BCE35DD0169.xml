@@ -1,0 +1,75 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="AE6A1B1F-34A7-DD3C-E09A-8BCE35DD0169" name="cliente_seguro">
+<createdBy>lucas.gaspar</createdBy>
+<createdTime>2017-05-03 19:28:13 UTC</createdTime>
+<ownerDesignName>seguradora</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="Cliente_IDCliente" id="A6E70567-8864-60FB-E35F-2F90F7B8B699">
+<createdBy>lucas.gaspar</createdBy>
+<createdTime>2017-05-03 19:28:13 UTC</createdTime>
+<ownerDesignName>seguradora</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="14FD1C24-D18F-696A-B647-B09185972593" referredColumn="74DC5D51-C12C-4ADF-6586-531D1ECF2472"/>
+</associations>
+</Column>
+<Column name="Seguro_IDSeguro" id="8377B71E-8412-2D54-44C9-A192D0C7F51C">
+<createdBy>lucas.gaspar</createdBy>
+<createdTime>2017-05-03 19:28:13 UTC</createdTime>
+<ownerDesignName>seguradora</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="08B7A4AB-B9F6-CFF8-F9C7-48FD00D573C3" referredColumn="7235AB34-453E-4E98-006D-073FD88784D9"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="7E38FAE3-5194-69E6-E1BA-251A2A7B81CA" name="cliente_seguro_PK">
+<createdBy>lucas.gaspar</createdBy>
+<createdTime>2017-05-03 19:28:13 UTC</createdTime>
+<ownerDesignName>seguradora</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A6E70567-8864-60FB-E35F-2F90F7B8B699"/>
+<colUsage columnID="8377B71E-8412-2D54-44C9-A192D0C7F51C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="D75DCDD9-1D9D-4899-6845-1EE279DEC1B9" name="FK_ASS_9">
+<createdBy>lucas.gaspar</createdBy>
+<createdTime>2017-05-03 19:28:13 UTC</createdTime>
+<generatorID>9F638C49-56FF-2963-C0FB-22387662E0F6</generatorID>
+<ownerDesignName>seguradora</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A6E70567-8864-60FB-E35F-2F90F7B8B699"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="80615B27-7C78-085F-4A83-757A749F781A" name="FK_ASS_10">
+<createdBy>lucas.gaspar</createdBy>
+<createdTime>2017-05-03 19:28:13 UTC</createdTime>
+<generatorID>9F638C49-56FF-2963-C0FB-22387662E0F6</generatorID>
+<ownerDesignName>seguradora</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8377B71E-8412-2D54-44C9-A192D0C7F51C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
