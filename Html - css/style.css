@@ -1,0 +1,22 @@
+p{
+    font-size: 15px;
+    text-indent: 10px;
+}
+
+p > strong{  /*elemento strong filho de p*/
+    font-size: 18px;
+    color: red;
+}
+
+h1{
+    text-decoration: underline; 
+}
+
+.primeiroParagrafo /*.primeiroParagrafo * */{
+    font-size: 18px;
+    color: blue;
+}
+
+p + p{ /*todo P que vir depois de outro P será cinza*/
+    color: gray;
+} 

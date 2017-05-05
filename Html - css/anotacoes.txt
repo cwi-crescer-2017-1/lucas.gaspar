@@ -1,0 +1,38 @@
+anotações html/css
+
+tag e elemento. Tag não modifica nada visual da page, elemento modifica.
+
+<!DOCTYPE html> - interpreta o html com a última versão do navegador
+
+negrito: <strong>  enfase: <em> fine print: <small>
+
+<BR> não é utilizado para espaçamento entre elementos, só entre o texto em si.
+
+<!DOCTYPE html>
+<html>
+    <head> <tite> Título </title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+    </body>
+</html>
+
+seletores do css:
+de tipo: exemplo h1
+
+de classe: .nomeClasse
+
+atributo: exemplo li[title] - todo li que possuir um título. Mesma especificidade da classe.
+
+seletor de ID = mais específico que existe. exemplo: #nomedoid
+
+1.1.1.1.1 - !important - style="" - id - classe - tipo(p strong ul li etc)
+
+seletores de filhos ul > li exemplo: p > strong {color: red;} todo strong que estiver dentro do P (pai) fica com a cor red.
+
+Descendente:        ul   li  pega todos os descendentes
+
+Adjacente: pega o elemento e seus irmãos. Exemplo: strong+strong (pega o strong que venha abaixo de outro strong
+em um mesmo elemento e aplica o estilo) - da direita pra esquerda
+
+
