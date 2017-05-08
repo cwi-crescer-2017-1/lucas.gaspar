@@ -17,19 +17,11 @@ body{
     font-weight: bold;  
 }
 
-
-.noticia-esquerda{
+.noticia{
     width: 50%;
     color: red;
-    float: left;
-    padding: 50px 90px; 
-}
-
-.noticia-direita{
-    width: 50%;
-    color: red;
-    float: right;
-    padding: 50px 90px; 
+    padding: 50px 90px;
+    float: left;    
 }
 
 .texto-noticia{
@@ -41,7 +33,12 @@ body{
     color: gray;
 }
 
-p::first-letter { 
+/*p::first-letter { 
     font-size: 500%;
     color: red;
+}*/
+
+img{
+    width: 270px; 
+    float: right;
 }
