@@ -41,5 +41,7 @@ padding: igual a margem, porém dentro do elemento
 
 display inline-block: Ocupa só o tamanho do conteúdo dela e ignora o width.
 
+Content propriedade obrigatória do pseudo elemento
 
+Sempre que o pai tem filhos com float, precisa do clear fix
 

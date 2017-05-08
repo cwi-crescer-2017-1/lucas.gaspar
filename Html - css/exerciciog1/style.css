@@ -1,0 +1,47 @@
+* {
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.header{
+    background: red;
+    width: 100%;
+    height: 80px;
+    text-align: center;
+    color: white;
+    padding-top: 25px;
+    font-weight: bold;  
+}
+
+
+.noticia-esquerda{
+    width: 50%;
+    color: red;
+    float: left;
+    padding: 50px 90px; 
+}
+
+.noticia-direita{
+    width: 50%;
+    color: red;
+    float: right;
+    padding: 50px 90px; 
+}
+
+.texto-noticia{
+    color: black;
+    line-height: 2;
+}
+
+.subtitulo{
+    color: gray;
+}
+
+p::first-letter { 
+    font-size: 500%;
+    color: red;
+}
