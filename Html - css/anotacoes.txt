@@ -35,4 +35,11 @@ Descendente:        ul   li  pega todos os descendentes
 Adjacente: pega o elemento e seus irmãos. Exemplo: strong+strong (pega o strong que venha abaixo de outro strong
 em um mesmo elemento e aplica o estilo) - da direita pra esquerda
 
+Margin: 20px 20px;
+
+padding: igual a margem, porém dentro do elemento
+
+display inline-block: Ocupa só o tamanho do conteúdo dela e ignora o width.
+
+
 
