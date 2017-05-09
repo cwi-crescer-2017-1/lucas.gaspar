@@ -1,0 +1,9 @@
+[0509/085904.581:ERROR:file_io_win.cc(163)] CreateFile C:\Program Files (x86)\temp\settings.dat: Acesso negado. (0x5)
+[0509/085904.663:ERROR:registration_protocol_win.cc(83)] TransactNamedPipe: O pipe foi finalizado. (0x6D)
+[0509/085904.690:ERROR:crashpad_win.cc(223)] Crashpad handler failed to start, crash reporting disabled
+[0509/085908.094:ERROR:file_io_win.cc(163)] CreateFile C:\Program Files (x86)\temp\settings.dat: Acesso negado. (0x5)
+[0509/085908.150:ERROR:registration_protocol_win.cc(83)] TransactNamedPipe: O pipe foi finalizado. (0x6D)
+[0509/085908.154:ERROR:crashpad_win.cc(223)] Crashpad handler failed to start, crash reporting disabled
+[0509/090102.042:ERROR:file_io_win.cc(163)] CreateFile C:\Program Files (x86)\temp\settings.dat: Acesso negado. (0x5)
+[0509/090102.098:ERROR:registration_protocol_win.cc(83)] TransactNamedPipe: O pipe foi finalizado. (0x6D)
+[0509/090102.111:ERROR:crashpad_win.cc(223)] Crashpad handler failed to start, crash reporting disabled
