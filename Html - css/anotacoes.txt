@@ -10,7 +10,7 @@ negrito: <strong>  enfase: <em> fine print: <small>
 
 <!DOCTYPE html>
 <html>
-    <head> <tite> Título </title>
+    <head> <title> Título </title>
         <meta charset="utf-8">
     </head>
     <body>
@@ -45,3 +45,14 @@ Content propriedade obrigatória do pseudo elemento
 
 Sempre que o pai tem filhos com float, precisa do clear fix
 
+opacity: 0 / visibility: hidden / display: none
+
+p:nth-child(add){ } pega os filhos impares
+
+margin empurra tudo na tela. top e left apenas o elemento específico
+
+position absolute: absoluto a tela. Não ocupa espaço dos outros elementos.
+
+fixed: fixo na tela. rola junto.
+
+usar target="_blank" sempre com o href

@@ -5,6 +5,7 @@
 body{
     margin: 0;
     font-family: 'Open Sans', sans-serif;
+    background: #fafafa;
 }
 
 .header{
@@ -22,7 +23,7 @@ body{
     color: #c4170c;
     padding: 10px 23px;
     float: left;
-    background: #fafafa;
+    background: #fff;
     margin: 2% 5%;
 }
 
@@ -35,7 +36,7 @@ body{
     color: #bbb;
 }
 
-p:first-letter { 
+.noticia > p:first-of-type:first-letter { 
     font-size: 500%;
     color: #c4170c;
     float: left;
