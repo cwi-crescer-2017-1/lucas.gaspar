@@ -4,7 +4,7 @@
 body{
     background-size: cover;
     margin: 0;
-    background-image: url(https://assets.vg247.it/current//2016/02/street-fighter-5-guida-mosse-trucchi.jpg);
+    background-image: url(imagens/ryu.jpg);
     background-repeat: no-repeat;
     background-position: top center;
 }
@@ -72,4 +72,16 @@ body{
 
 .main .main-text{
     padding: 0px 20px;
+}
+
+.main .imagem .imagem-main{
+    position: relative;
+    float: left;
+    padding-left: 20px;
+}
+
+.main .atributo{
+    width: 50%;
+    float: left;
+    margin-left: 45px;
 }
