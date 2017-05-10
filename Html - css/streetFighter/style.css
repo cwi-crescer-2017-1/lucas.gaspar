@@ -2,9 +2,74 @@
     box-sizing: border-box;
 }
 body{
-    position: relative;
+    background-size: cover;
     margin: 0;
     background-image: url(https://assets.vg247.it/current//2016/02/street-fighter-5-guida-mosse-trucchi.jpg);
     background-repeat: no-repeat;
     background-position: top center;
+}
+
+.menu {
+    position: relative;
+    line-height: 30px;
+    left: 50%;
+    top: 270px;
+    transform: translate(-50%);
+    width: 30%;
+    padding: 0px, 10px;
+    margin: 0px;
+    border: 1px solid;
+    border-color: white;
+    list-style: none;
+    border-radius: 10px;
+    background-color: rgba(211, 211, 211, 0.5);
+
+}
+
+.menu .menu-items .menu-item{
+    position: relative;
+    display: inline;
+}
+
+.menu .menu-items .menu-item .menu-link {
+    padding: 2px 17px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold; 
+}
+
+.main{
+    position: relative;
+    width: 50%;
+    left: 50%;
+    transform: translate(-50%);
+    background-color: #D8D8D8;
+    top: 320px;
+}
+
+.title{
+    background-color: #2E2E2E;
+    height: 80px;
+}
+
+.main .title .principal-title{
+    color: white;
+    padding-top: 20px;
+    padding-left: 20px;
+}
+
+.main .secondary-title{
+    padding-left: 20px;
+}
+
+.main .terciary-title{
+    padding-left: 20px;
+}
+
+.main .separator{
+    width: 90%;
+}
+
+.main .main-text{
+    padding: 0px 20px;
 }
