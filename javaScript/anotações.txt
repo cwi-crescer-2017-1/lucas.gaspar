@@ -1,0 +1,21 @@
+http: protocolo para troca de hipertexto. 
+
+código server side e client side.
+
+typeof variavel -> mostra o tipo do valor da variável (boolean, string, etc)
+
+null e undefined são diferentes. null estado de valor nulo. Undefined var não foi declarada ou estanciada.
+
+babel - transpile da função de novos códigos para versões mais antigas
+
+isNan()
+
+arguments - ver exemplo aula 1 se não lembra
+
+global função e bloco.
+
+for in percorre as propriedades de um objeto. NÃO OS VALORES.
+
+for of percorre os elementos de um array
+
+array é um objeto com uma propriedade length. 
