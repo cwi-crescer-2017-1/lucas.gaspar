@@ -33,7 +33,7 @@ body{
 }
 
 .menu .menu-items .menu-item .menu-link {
-    padding: 2px 6px;
+    padding: 2px 3%;
     color: white;
     text-decoration: none;
     font-weight: bold; 
@@ -91,4 +91,9 @@ body{
     width: 50%;
     float: right;
     margin-left: 45px;
+}
+
+#perfil{
+    width: 320px;
+    height: 320px;
 }
