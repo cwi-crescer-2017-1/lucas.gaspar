@@ -36,9 +36,7 @@ var funcao = function(instrutor){
 function imprime(array, funcao) {
     if (typeof funcao === "function")
     {
-      for (var i = 0; i < arraystrings.length; i++) {
-        funcao(arraystrings[i]);
-      }
+      array.forEach(funcao)
     } else {
       console.log("informe uma função no segundo parâmetro, por favor");
     }
@@ -47,18 +45,13 @@ imprime(arraystrings, funcao);
 imprime(arraystrings, 3.14);
 
 //Exercício 4
-var segundavez = 0, b;
-function somar(a) {
-     segundavez++;
-     if (segundavez === 2){
-       segundavez = 0;
-       return a+b;
-     }
-     else {
-      b = a;
+
+function adicionar(numero1) {
+     return function(numero2){
+       return numero1 + numero2;
      }
 }
-console.log(somar(5), somar(5));
+console.log(adicionar(3)(4));
 
 // Exercicio 5
 function fibosum(n) {
@@ -94,5 +87,3 @@ function queroCafe(mascada, precos) {
     return resp.toString();
 }
 console.log(queroCafe(5,precos));
-
-//exercicio 6 com ordenação no braço
