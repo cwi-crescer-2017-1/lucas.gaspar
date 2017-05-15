@@ -1,21 +1,29 @@
-http: protocolo para troca de hipertexto. 
+http: protocolo para troca de hipertexto.
 
-código server side e client side.
+cï¿½digo server side e client side.
 
-typeof variavel -> mostra o tipo do valor da variável (boolean, string, etc)
+typeof variavel -> mostra o tipo do valor da variï¿½vel (boolean, string, etc)
 
-null e undefined são diferentes. null estado de valor nulo. Undefined var não foi declarada ou estanciada.
+null e undefined sï¿½o diferentes. null estado de valor nulo. Undefined var nï¿½o foi declarada ou estanciada.
 
-babel - transpile da função de novos códigos para versões mais antigas
+babel - transpile da funï¿½ï¿½o de novos cï¿½digos para versï¿½es mais antigas
 
 isNan()
 
-arguments - ver exemplo aula 1 se não lembra
+arguments - ver exemplo aula 1 se nï¿½o lembra
 
-global função e bloco.
+global funï¿½ï¿½o e bloco.
 
-for in percorre as propriedades de um objeto. NÃO OS VALORES.
+for in percorre as propriedades de um objeto. Nï¿½O OS VALORES.
 
 for of percorre os elementos de um array
 
-array é um objeto com uma propriedade length. 
+array ï¿½ um objeto com uma propriedade length.
+
+Filter recebe uma funÃ§Ã£o que vai dando true ou false.
+
+Map e filter, ,reduce, sort, split e join vistos em aula
+
+Reduce - muito utilizado para somar/fazer media conjunto em um array
+
+Estudar expressÃµes regulares e match

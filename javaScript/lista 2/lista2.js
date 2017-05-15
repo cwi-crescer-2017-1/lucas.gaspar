@@ -1,15 +1,16 @@
-// Exercicio 1 faltou verificar se a série tem algo null
+// Exercicio 1
 function seriesInvalidadas(series) {
     let resp = [];
     let anoAtual = new Date();
     anoAtual = anoAtual.getFullYear();
     for (let i = 0; i < series.length; i++) {
-        if (series[i].anoEstreia > anoAtual) {
+        if (series[i].anoEstreia > anoAtual || Object.values(series[i]).some(v => v == null || typeof v === 'undefined')) {
             resp.push(series[i].titulo);
         }
     }
     return resp.toString();
 }
+
 console.log(seriesInvalidadas(series));
 
 // Exercicio 2
@@ -96,30 +97,34 @@ function queroTitulo(titulo) {
 
 console.log(queroTitulo("The"));
 
-// Exericio 7 faltou ordenar pelo último nome
+// Exericio 7 Corrigido
 
-function creditosIlluminatis (serie) {
-    let diretores = [];
-    let elenco = [];
-    let ultimoNome = [];
-    let primeironome = [];
 
-    for (let i = 0; i < serie.diretor.length; i++) {
-        diretores.push(serie.diretor[i]);
-    }
+function creditosIlluminatis(serie) {
+  let criterioDeOrdenacao = (s1, s2) => {
+    return s1.pegarUltimoNome().localeCompare(s2.pegarUltimoNome())
+  }
+  let elencoOrdenado = serie.elenco.sort(criterioDeOrdenacao);
+  let diretoresOrdenados = serie.diretor.sort(criterioDeOrdenacao);
 
-    for (let i = 0; i < serie.elenco.length; i++) {
-        elenco.push(serie.elenco[i]);
-    }
-
-    for (let i = 0; i < serie.diretor.length; i++) {
-        ultimoNome[i] = diretores[i].split(" ").pop();
-        primeironome[i] = diretores[i].split(' ').slice(0, -1);
-    }
-     return primeironome;
+  console.log(serie.titulo);
+  console.log("Diretores");
+  console.log(diretoresOrdenados);
+  console.log("Elenco");
+  console.log(elencoOrdenado);
 }
 
 creditosIlluminatis(series[0]);
-// console.log(creditosIlluminatis(series[0]));
 
 // Exercicio 8
+
+function descobrirSerieComTodosAbreviados() {
+  let elencoSerie = series
+    .find(s => s.elenco.every(e => e.temAbreviacao()))
+    .elenco
+    .map(e => e.match(/ [a-z][.] /gi)[0][1])
+    .join("");
+  return `#${ elencoSerie }`;
+}
+
+console.log(descobrirSerieComTodosAbreviados());
