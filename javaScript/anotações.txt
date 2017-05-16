@@ -22,8 +22,34 @@ array � um objeto com uma propriedade length.
 
 Filter recebe uma função que vai dando true ou false.
 
-Map e filter, ,reduce, sort, split e join vistos em aula
+Map e filter, reduce, sort, split e join vistos em aula
 
 Reduce - muito utilizado para somar/fazer media conjunto em um array
 
 Estudar expressões regulares e match
+
+Exemplo meu com map e filter: series.filter(e => e.titulo === "Stranger Things").map(e => e.titulo);
+
+no javaScript o THIS muda de acordo com o contexto de execução
+
+Herança na mão seria copiar "prototype" de uma outra classe na do construtor que está sendo criada
+
+var goku = Object.assign({}, x)   // onde x é a variável que já existe, e será criado um novo objeto // Só trabalha com objetos, é o que precisa
+ser atribuído
+
+Object.defineProperty()
+object.freeze()
+object.seal() parecido com o freeze, mas ainda é possível alterar os valores.
+
+dar uma olhada em closures javaScript.
+
+Arrowfunction tem sope léxico. Pega o this do bloco surround (do de cima)
+
+o new cria um novo contexto de execução para o objeto a ser criado. Se não usar o new ele é atrelado a window (Global) e o this será diferente
+(justamente porque é o this global, do window)
+
+ray.ligarsabre.call(contextoThis, "Outro Argumento")
+bind, call, apply, self = tudo para "recuperar" o this.
+
+fetch javaScript. Visto em aula - Comunicação assíncrona
+DataPoa - api aberta Porto Alegre
