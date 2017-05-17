@@ -15,6 +15,12 @@ document.addEventListener('DOMContentLoaded', function() {
         let img = document.createElement('img');
         img.src = json.sprites.front_default;
         div.append(img);
+
+        //pegar outras informações
+        let nome = json.name;
+        let numero = json.id;
+        let tipo = [];
+        tipo = json.types.forEach(e => console.log(e.type.name));
       })
   }
 })
