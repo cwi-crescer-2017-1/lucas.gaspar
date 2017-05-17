@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html ng-app="modulo01">
+  <head>
+    <meta charset="utf-8">
+    <title>titulo</title>
+    <script src="https://code.angularjs.org/1.6.4/angular.js"></script>
+    <script src="controller.js"></script>
+  </head>
+  <body ng-controller="pokemonController">
+        <div>
+            <label>Nome</label>
+            <input type="text" ng-model="pokemon.nome">
+            {{pokemon.nome}}
+            do tipo {{pokemon.tipo}}
+        </div>
+  </body>
+</html>

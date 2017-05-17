@@ -1,0 +1,3 @@
+módulo - agrupamento de alguma coisa que faça sentido (Funções, etc). Exemplo do ERP
+
+todo escopo criado herda do $rootScope
