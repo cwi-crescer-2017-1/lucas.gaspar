@@ -6,6 +6,21 @@ modulo.filter('mascada', function () {
     }
 });
 
+modulo.filter('organizar', function () {
+    return function (aula) {
+        let saida = lpad(aula.numero);
+        return `${saida} - ${aula.nome.toUpperCase()} - `;
+    }
+});
+
+function lpad(numero) {
+    // return '0' + numero;
+    let str = "" + numero;
+    let pad = "00";
+    let saida = pad.substring(0, pad.length - str.length) + str;
+    return saida;
+}
+
 modulo.controller("filtroController", function ($scope) {
     let instrutores = [{
         nome: 'Pedro (PHP)',

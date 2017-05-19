@@ -9,21 +9,12 @@
   </head>
   <body ng-controller="filtroController">
         <div class="container-fluid">
-            <div class="row col-md-4" ng-repeat="i in instrutores | orderBy: 'aula.numero'">
-                  <div class="row col-md-4" ng-repeat="aula in i.aula">
-                    {{aula.nome}}
-                    {{i.nome}}
+            <div ng-repeat="i in instrutores | orderBy: 'nome'">
+                  <div ng-repeat="aula in i.aula">
+                    <ul class="list-group">
+                    <li class="list-group-item">{{aula | organizar}}{{i.nome | mascada}}</li>
+                    </ul>
                   </div>
-                <!--<table class="table table-striped">
-                  <tr>
-                    <th>Nome</th>
-                    <th>Número da aula</th>
-                    <th>Conteúdo</th>
-                  </tr>
-                  <tr ng-repeat="i in instrutores">
-                    <td>{{i.nome | mascada}}</td>
-                  </tr>
-                </table>-->
             </div>
         </div>
   </body>
