@@ -9,8 +9,12 @@
   </head>
   <body ng-controller="filtroController">
         <div class="container-fluid">
-            <div class="row col-md-4">
-                <table class="table table-striped">
+            <div class="row col-md-4" ng-repeat="i in instrutores | orderBy: 'aula.numero'">
+                  <div class="row col-md-4" ng-repeat="aula in i.aula">
+                    {{aula.nome}}
+                    {{i.nome}}
+                  </div>
+                <!--<table class="table table-striped">
                   <tr>
                     <th>Nome</th>
                     <th>Número da aula</th>
@@ -18,10 +22,8 @@
                   </tr>
                   <tr ng-repeat="i in instrutores">
                     <td>{{i.nome | mascada}}</td>
-                    <!--<td>{{i.aula[0].numero}}</td>
-                    <td>{{i.aula[0].nome}}</td>-->
                   </tr>
-                </table>
+                </table>-->
             </div>
         </div>
   </body>
