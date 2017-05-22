@@ -120,6 +120,7 @@ modulo.controller("controller", function($scope, $filter){
             instrutor.urlFoto = $scope.instrutor.foto;
         }
         instrutor.aula = [];
+        instrutor.aula.push($scope.novoInstrutor.aula);
 
          let jaExisteNome = false;
          let jaExisteEmail = false;
@@ -137,7 +138,8 @@ modulo.controller("controller", function($scope, $filter){
 
         if(jaExisteNome === false){
             if(jaExisteEmail === false){
-                $scope.instrutores.push(instrutor);  
+                $scope.instrutores.push(instrutor); 
+                alert("Instrutor cadastrado com sucesso"); 
             }
             else{
                 alert("Email já está sendo utilizado");
