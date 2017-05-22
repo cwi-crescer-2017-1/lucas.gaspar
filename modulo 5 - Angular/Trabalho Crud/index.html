@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html ng-app="modulo01">
+  <head>
+    <meta charset="utf-8">
+    <title>titulo</title>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://code.angularjs.org/1.6.4/angular.js"></script>
+    <script src="controller.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </head>
+  <body ng-controller="controller">
+        <div class="container-fluid">
+
+            <!--Exibindo as aulas-->
+            <div class="row col-md-12"> 
+                <h1>Aulas</h1>
+                <table class="table table-striped" id="tabelaAulas">
+                  <tr>
+                    <th>id</th>
+                    <th>Nome</th>
+                    <th></th>
+                      <th></th>
+                  </tr>
+                  <tr ng-repeat="a in aulas | orderBy : 'nome'">
+                    <td>{{a.id}}</td>
+                    <td>{{a.nome}}</td>
+                    <td><input type="button" class="btn btn-danger" ng-click="excluirAula(a.id)" value="excluir"></td>
+                     <td><input type="button" class="btn btn-primary" ng-click="editarAula(a)" data-toggle="modal" data-target="#modalAula" value="editar"></td>
+                  </tr>
+                </table>
+            </div>
+
+            <h2>Adicionar nova Aula</h2>
+            <input type="button" class="btn btn-primary" ng-click="" data-toggle="modal" data-target="#modalAddAula" value="Nova Aula">
+            
+            <!--Alterando uma aula-->
+            <div class="modal fade" id="modalAula" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Aula</h4>
+                        </div>
+                        <div class="modal-body">
+                            <form novalidate name="formEditarAula">
+                              <label for="nomeAula">Informe o nome da aula</label>
+                              <input type="text" class="form-control" placeholder="Ex.: JavaScript" ng-model="aulaEditar.nome"
+                                       required ng-minlength="3" ng-maxlength="20" ng-value="aulaEditar.nome">
+                              <input type="button" class="btn btn-primary" value="Alterar" ng-click="alterarAula(aulaEditar)">
+                              </form>
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                
+                </div>
+            </div>
+
+            <!--Adicionando Aula-->
+            <div class="modal fade" id="modalAddAula" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Nova Aula</h4>
+                        </div>
+                        <div class="modal-body">
+                            <form novalidate name="meuFormulario">
+                
+                                <label for="nomeAula">Informe o nome da aula</label>
+                                <input type="text" class="form-control" placeholder="Ex.: JavaScript" ng-model="nomeAula"
+                                        required ng-minlength="3" ng-maxlength="20">
+                                <button type="submit" class="btn btn-primary" ng-click="adicionarAula()"> Adicionar</button>
+            
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                
+                </div>
+            </div>
+            
+            <h1>Instrutores</h1>
+            <input type="button" class="btn btn-primary" ng-click="" data-toggle="modal" data-target="#modalInstrutor" value="Novo Instrutor">
+            <ul class="list-group" ng-repeat="i in instrutores | orderBy : 'nome' ">
+                  <h2>{{i.nome}}</h2>
+                   <td><input type="button" class="btn btn-danger" ng-click="excluirInstrutor(i.id)" value="excluir"></td>
+                   <td><input type="button" class="btn btn-primary" ng-click="editarInstrutor(i)" data-toggle="modal" data-target="#modalInstrutorEditar" value="Editar"></td>
+                  <li class="list-group-item">Id: {{i.id}}</li>
+                  <li class="list-group-item">Nome: {{i.nome}}</li>
+                  <li class="list-group-item">Sobrenome: {{i.sobrenome}}</li>
+                  <li class="list-group-item">Idade: {{i.idade}}</li>
+                  <li class="list-group-item">E-mail: {{i.email}}</li>
+                  <li class="list-group-item">Dando Aula? {{i.dandoAula}}</li>
+                  <li class="list-group-item">Foto: {{i.urlFoto}}</li>
+                  
+                  <ul class="list-group" ng-repeat="aula in i.aula">
+                        <li class="list-group-item">Cod Aula: {{aula}}</li>
+                  </ul>
+            </ul> 
+
+            <!--INSTRUTOR ADD-->
+            <div class="modal fade" id="modalInstrutor" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Novo Instrutor</h4>
+                        </div>
+                        <div class="modal-body">
+                            <form novalidate name="formInstrutor">
+                
+                                <label for="nomeinstrutor">nome do instrutor</label>
+                                <input type="text" class="form-control" placeholder="Ex.: Lucas" ng-model="instrutor.nome"
+                                        required ng-minlength="3" ng-maxlength="20">
+
+                                <label for="sonrenomeInstrutor">Sobrenome</label>
+                                <input type="text" class="form-control" placeholder="Ex.: Gaspar" ng-model="instrutor.sobrenome"
+                                ng-maxlength="90">
+
+                                <label for="idadeInstrutor">Idade</label>
+                                <input type="number" class="form-control" placeholder="Ex.: 21" ng-model="instrutor.idade"
+                                        required ng-maxlength="90">
+
+                                <label for="emailInstrutor">E-mail</label>
+                                <input type="email" class="form-control" placeholder="Ex.: lucas@cwi.com.br" ng-model="instrutor.email"
+                                        required ng-maxlength="90">
+                                
+                                Já deu aula?
+                                <label><input type="radio" name="jaDeuAula" ng-model="instrutor.dandoAula" value="true">sim</label>
+                                <label><input type="radio" name="jaDeuAula" ng-model="instrutor.dandoAula" value="false">Não</label>
+
+                                <label for="aula">aula:</label>
+                                    <select name="aula" ng-model="novoInstrutor.aula">
+                                        <option ng-repeat="aula in aulas" value="{{aula}}">{{aula.nome}}</option>
+                                    </select>
+                                
+                                <label for="foto">Foto</label>
+                                     <input type="text" class="form-control" placeholder="Ex.: http://foto.com/3.png" ng-model="instrutor.foto">
+
+                                <button type="submit" class="btn btn-primary" ng-click="incluirInstrutor(instrutor)"> Adicionar</button>
+            
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                
+                </div>
+            </div>
+            <!--FIM INSTRUTOR ADD-->
+
+            <!--INSTRUTOR EDITAR-->
+            <div class="modal fade" id="modalInstrutorEditar" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Editar Instrutor</h4>
+                        </div>
+                        <div class="modal-body">
+                            <form novalidate name="formEditarInstrutor">
+                
+                                <label for="nomeinstrutor">nome do instrutor</label>
+                                <input type="text" class="form-control" placeholder="Ex.: Lucas" ng-model="instrutorEditar.nome"
+                                        required ng-minlength="3" ng-maxlength="20">
+
+                                <label for="sonrenomeInstrutor">Sobrenome</label>
+                                <input type="text" class="form-control" placeholder="Ex.: Gaspar" ng-model="instrutorEditar.sobrenome"
+                                ng-maxlength="90">
+
+                                <label for="idadeInstrutor">Idade</label>
+                                <input type="number" class="form-control" placeholder="Ex.: 21" ng-model="instrutorEditar.idade"
+                                        required ng-maxlength="90">
+
+                                <label for="emailInstrutor">E-mail</label>
+                                <input type="email" class="form-control" placeholder="Ex.: lucas@cwi.com.br" ng-model="instrutorEditar.email"
+                                        required ng-maxlength="90">
+                                
+                                <!--Já deu aula?
+                                <label><input type="radio" name="jaDeuAula" ng-model="instrutorEditar.dandoAula" value="true">sim</label>
+                                <label><input type="radio" name="jaDeuAula" ng-model="instrutorEditar.dandoAula" value="false">Não</label>
+
+                                <label for="aula">aula:</label>
+                                    <select name="aula" ng-model="instrutorEditar.aula">
+                                        <option ng-repeat="aula in aulas" value="{{aula}}">{{aula.nome}}</option>
+                                    </select>
+                                
+                                <label for="foto">Foto</label>
+                                     <input type="text" class="form-control" placeholder="Ex.: http://foto.com/3.png" ng-model="instrutor.foto">-->
+
+                                <button type="submit" class="btn btn-primary" ng-click="alterarInstrutor(instrutorEditar)"> Alterar </button>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                
+                </div>
+            </div>
+            <!--FIM INSTRUTOR Editar-->
+
+
+        </div>
+  </body>
+</html>
