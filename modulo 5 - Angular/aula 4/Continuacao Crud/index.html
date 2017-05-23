@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="crud">
+<html ng-app='crud'>
   <head>
     <meta charset="utf-8">
     <title>titulo</title>
@@ -7,12 +7,20 @@
     <script src="https://code.angularjs.org/1.6.4/angular.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.min.js"></script>
     <script src="controller.js"></script>
+    <script src="instrutores/instrutorsController.js"></script>
+    <script src="aulas/aulasController.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
   </head>
-  <body ng-controller="principalController">
-      <a href="#!/aulas">Página 01</a>
-      <a href="#!/instrutores">Página 02</a>
-       <ng-view></ng-view>
+  <body>
+    <div class="container">
+
+        <a href="#!/aulas">Aulas</a>
+        <a href="#!/instrutores">Instrutores</a>
+
+        <ng-view></ng-view>
+
+    </div>
   </body>
 </html>
