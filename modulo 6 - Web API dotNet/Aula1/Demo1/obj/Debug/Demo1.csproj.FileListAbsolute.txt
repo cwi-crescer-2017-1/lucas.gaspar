@@ -1,0 +1,6 @@
+C:\Users\lucas.gaspar\Desktop\Crescer\lucas.gaspar\modulo 6 - Web API dotNet\Aula1\Demo1\bin\Debug\Demo1.exe.config
+C:\Users\lucas.gaspar\Desktop\Crescer\lucas.gaspar\modulo 6 - Web API dotNet\Aula1\Demo1\bin\Debug\Demo1.exe
+C:\Users\lucas.gaspar\Desktop\Crescer\lucas.gaspar\modulo 6 - Web API dotNet\Aula1\Demo1\bin\Debug\Demo1.pdb
+C:\Users\lucas.gaspar\Desktop\Crescer\lucas.gaspar\modulo 6 - Web API dotNet\Aula1\Demo1\obj\Debug\Demo1.csprojResolveAssemblyReference.cache
+C:\Users\lucas.gaspar\Desktop\Crescer\lucas.gaspar\modulo 6 - Web API dotNet\Aula1\Demo1\obj\Debug\Demo1.exe
+C:\Users\lucas.gaspar\Desktop\Crescer\lucas.gaspar\modulo 6 - Web API dotNet\Aula1\Demo1\obj\Debug\Demo1.pdb

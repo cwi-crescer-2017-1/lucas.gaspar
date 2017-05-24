@@ -1,0 +1,9 @@
+References: Scott Hanselman
+
+(pasta certa)
+csc nomeArquivo.extensao
+arquivo.exe
+
+readonly é bom para receber um valor no construtor e proteger ele. Pois readOnly naão pode ser alterado nos métodos
+
+ctro+shift+b
