@@ -46,6 +46,7 @@ modulo.controller("instrutoresController", function($scope, instrutorService, au
         }
 
          if (angular.isDefined(instrutor.id)){
+             instrutor.aula = $scope.instrutor.aula;
              promise = instrutorService.alterar(instrutor);
         }
         else{
@@ -61,7 +62,6 @@ modulo.controller("instrutoresController", function($scope, instrutorService, au
     }
 
     function preencherInstrutor(instrutor) {
-        console.log(instrutor);
         $scope.instrutor = angular.copy(instrutor);
     }
 

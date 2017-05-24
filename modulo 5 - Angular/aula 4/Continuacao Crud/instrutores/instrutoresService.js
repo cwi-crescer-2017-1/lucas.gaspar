@@ -11,7 +11,6 @@ modulo.factory('instrutorService', function($http) {
     }
 
     function salvar(instrutor) {
-        console.log("chamou sakvar instrutor");
         return $http.post(`${urlbase}/instrutor`, instrutor);
     }
 
