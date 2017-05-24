@@ -50,7 +50,7 @@ modulo.controller("instrutoresController", function($scope, instrutorService, au
              promise = instrutorService.alterar(instrutor);
         }
         else{
-             instrutor.aula = $scope.novoInstrutor.aula;
+            //  instrutor.aula = $scope.novoInstrutor.aula;
              promise = instrutorService.salvar(instrutor);
         }
 

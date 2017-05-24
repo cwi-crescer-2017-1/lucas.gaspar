@@ -42,12 +42,12 @@
     {
       "nome": "Bernardo",
       "sobrenome": "Rezende",
-      "idade": 30,
+      "idade": 29,
       "email": "bernardo@cwi.com.br",
       "foto": "http://www.bernardofoto.jpg",
       "dandoAula": "true",
       "aula": [
-        "3"
+        "0"
       ],
       "urlFoto": "http://www.bernardofoto.jpg",
       "id": 2
@@ -63,17 +63,6 @@
         "1"
       ],
       "id": 4
-    },
-    {
-      "nome": "Rafael",
-      "sobrenome": "Barreto",
-      "idade": 21,
-      "email": "rafael@cwi.com",
-      "urlFoto": "default-user-image.png",
-      "aula": [
-        "1"
-      ],
-      "id": 5
     }
   ]
 }
