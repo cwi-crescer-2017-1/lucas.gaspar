@@ -10,5 +10,5 @@ modulo.config(function($routeProvider) {
       controller: 'instrutoresController',
       templateUrl: 'instrutores/instrutores.html'
     })
-    .otherwise({redirectTo: '/aulas/aulas'});
+    .otherwise({redirectTo: '/aulas'});
 });

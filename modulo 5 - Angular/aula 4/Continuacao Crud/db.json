@@ -27,17 +27,43 @@
   ],
   "instrutor": [
     {
-      "id": 0,
-      "nome": "Nome",
-      "sobrenome": "Sobrenome",
-      "idade": 25,
-      "email": "email@cwi.com.br",
-      "dandoAula": true,
+      "nome": "Lucas",
+      "sobrenome": "Gaspar",
+      "idade": 21,
+      "email": "lucas@cwi.com.br",
+      "dandoAula": "true",
       "aula": [
-        1,
-        4
+        "0",
+        "5"
       ],
-      "urlFoto": "http://foto.com/3.png"
+      "urlFoto": "default-user-image.png",
+      "id": 1
+    },
+    {
+      "nome": "Bernardo",
+      "sobrenome": "Rezende",
+      "idade": 30,
+      "email": "bernardo@cwi.com.br",
+      "foto": "http://www.bernardofoto.jpg",
+      "dandoAula": "true",
+      "aula": [
+        "0",
+        "5"
+      ],
+      "urlFoto": "http://www.bernardofoto.jpg",
+      "id": 2
+    },
+    {
+      "nome": "PHP",
+      "sobrenome": "undefined",
+      "idade": 23,
+      "email": "pedro@cwi.com.br",
+      "dandoAula": "true",
+      "urlFoto": "default-user-image.png",
+      "aula": [
+        "1"
+      ],
+      "id": 4
     }
   ]
 }

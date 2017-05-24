@@ -10,6 +10,7 @@
     <script src="instrutores/instrutorsController.js"></script>
     <script src="aulas/aulasController.js"></script>
     <script src="aulas/aulasService.js"></script>
+    <script src="instrutores/instrutoresService.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     
@@ -17,8 +18,14 @@
   <body>
     <div class="container">
 
-        <a href="#!/aulas">Aulas</a>
-        <a href="#!/instrutores">Instrutores</a>
+      <nav class="navbar">
+        <div class="container-fluid">
+          <ul class="nav navbar-nav">
+              <li><a href="#!/aulas">Aulas</a></li>
+              <li><a href="#!/instrutores">Instrutores</a></li>
+          </ul>
+        </div>
+      </nav>
 
         <ng-view></ng-view>
 

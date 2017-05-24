@@ -1,1 +1,65 @@
-<h2>Instrutores.html</h2>
+<link rel="stylesheet" href="instrutores/instrutores.css">
+<input type="button" class="btn btn-primary margem" data-toggle="modal" data-target="#modalInstrutor" value="Novo Instrutor">
+
+<!--Lista Instrutores-->
+<ul class="list-group" ng-repeat="i in instrutores | orderBy : 'nome' ">
+    <td><input type="button" class="btn btn-danger" ng-click="excluir(i.id)" value="excluir"></td>
+    <td><input type="button" class="btn btn-primary" ng-click="modalInstrutor(); preencherInstrutor(i)" data-toggle="modal" data-target="#modalInstrutor"
+            value="Editar"></td>
+    <li class="list-group-item">Id: {{i.id}}</li>
+    <li class="list-group-item">Nome: {{i.nome}}</li>
+    <li class="list-group-item">Sobrenome: {{i.sobrenome}}</li>
+    <li class="list-group-item">Idade: {{i.idade}}</li>
+    <li class="list-group-item">E-mail: {{i.email}}</li>
+    <li class="list-group-item">Dando Aula? {{i.dandoAula}}</li>
+    <li class="list-group-item">Foto: {{i.urlFoto}}</li>
+
+    <ul class="list-group" ng-repeat="aula in i.aula">
+        <li class="list-group-item">Cod Aula: {{aula}}</li>
+    </ul>
+</ul>
+
+<!--modal salvar instrutor-->
+<div class="modal fade" id="modalInstrutor" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Novo Instrutor</h4>
+            </div>
+            <div class="modal-body">
+                <form novalidate name="formInstrutor">
+
+                    <label for="nomeinstrutor">nome do instrutor</label>
+                    <input type="text" class="form-control" placeholder="Ex.: Lucas" ng-model="instrutor.nome" required ng-minlength="3" ng-maxlength="20">
+
+                    <label for="sonrenomeInstrutor">Sobrenome</label>
+                    <input type="text" class="form-control" placeholder="Ex.: Gaspar" ng-model="instrutor.sobrenome" ng-maxlength="90">
+
+                    <label for="idadeInstrutor">Idade</label>
+                    <input type="number" class="form-control" placeholder="Ex.: 21" ng-model="instrutor.idade" required ng-maxlength="90">
+
+                    <label for="emailInstrutor">E-mail</label>
+                    <input type="email" class="form-control" placeholder="Ex.: lucas@cwi.com.br" ng-model="instrutor.email" required ng-maxlength="90">                    Já deu aula?
+                    <label><input type="radio" name="jaDeuAula" ng-model="instrutor.dandoAula" value="true">sim</label>
+                    <label><input type="radio" name="jaDeuAula" ng-model="instrutor.dandoAula" value="false">Não</label>
+
+                    <label for="aula">aula:</label>
+                    <select multiple name="aula" ng-model="novoInstrutor.aula">
+                                        <option ng-repeat="aula in aulas" value="{{aula.id}}">{{aula.nome}}</option>
+                                    </select>
+
+                    <label for="foto">Foto</label>
+                    <input type="text" class="form-control" placeholder="Ex.: http://foto.com/3.png" ng-model="instrutor.foto">
+
+                    <button type="submit" class="btn btn-primary" ng-click="incluir(instrutor)"> Salvar</button>
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
