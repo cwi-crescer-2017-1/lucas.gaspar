@@ -38,15 +38,10 @@ namespace ExemploWebApi.Controllers
             if (heroi != null) 
             {
                 heroi.Id = ++idHeroi;
-                Heroi h1 = new Heroi();
 
-                h1.Id = heroi.Id;
-                h1.Nome = heroi.Nome;
-                h1.poder = heroi.poder;
+                herois.Add(heroi);
 
-                herois.Add(h1);
-
-                return Ok(h1);
+                return Ok(heroi);
             }
             else
             {
