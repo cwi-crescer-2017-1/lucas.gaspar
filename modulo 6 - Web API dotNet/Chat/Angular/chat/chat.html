@@ -5,9 +5,8 @@
          <div class="principal">
              <div ng-repeat="m in mensagens" ng-class="m.Usuario.Nome == nomeAtual ? 'esquerda' : 'direita'">
                 <img class="perfil" data-ng-src={{m.Usuario.UrlFoto}}>
-             {{m.Usuario.Nome}}
+             <h6>{{m.Usuario.Nome}}:</h6>
              {{m.Texto}}
-             {{m.Data}}         
              </div>
          </div>
          <div class="mensagem">

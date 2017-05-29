@@ -3,6 +3,7 @@ modulo.controller("chatController", function($scope, chatService, $localStorage,
     $scope.salvar = salvar;
     $scope.nomeAtual = $localStorage.Nome;
     
+    setInterval(function(){carregarMensagens()}, 2000);
     carregarMensagens();
 
     function carregarMensagens(){
