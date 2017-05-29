@@ -12,7 +12,6 @@
 
 .mensagem{
     position: relative;
-    /*background: blue;*/
     left: 50%;
     transform: translate(-50%);
     width: 70%;
@@ -31,9 +30,11 @@
 .direita{
     position: relative;
     float: right;
+    clear: both;
 }
 
 .esquerda{
     position: relative;
     float: left;
+    clear: both;
 }

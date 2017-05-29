@@ -4,7 +4,7 @@
 <div class="container-fluid">
          <div class="principal">
              <div ng-repeat="m in mensagens" ng-class="m.Usuario.Nome == nomeAtual ? 'esquerda' : 'direita'">
-                <div><img class="perfil" data-ng-src={{m.Usuario.UrlFoto}}></div>
+                <img class="perfil" data-ng-src={{m.Usuario.UrlFoto}}>
              {{m.Usuario.Nome}}
              {{m.Texto}}
              {{m.Data}}         
@@ -12,10 +12,10 @@
          </div>
          <div class="mensagem">
              <div class="row">
-                 <div class="col-xs-12 col-md-6">
-                    <form>
+                 <div class="col-md-6">
+                    <form novalidate name="formEnvio">
                         <div class="form-group">
-                              <textarea class="area-mensagem" rows="6" ng-model="texto">
+                              <textarea class="area-mensagem" rows="6" ng-model="texto" required>
                               </textarea>
                         </div>
                           <button type="submit" class="btn btn-primary" ng-click="salvar(texto)"> Salvar</button>

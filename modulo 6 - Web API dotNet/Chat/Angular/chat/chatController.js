@@ -22,6 +22,9 @@ modulo.controller("chatController", function($scope, chatService, $localStorage,
     }
 
     function salvar(texto) {
+        if ($scope.formEnvio.$invalid) {
+            return;
+        }
         let data = new Date();
         mensagem = {
             Texto: texto,
