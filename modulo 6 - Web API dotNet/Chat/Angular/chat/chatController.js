@@ -39,6 +39,7 @@ modulo.controller("chatController", function($scope, chatService, $localStorage,
 
        promise.then(function () {
             carregarMensagens();
+            $scope.texto= "";
         });  
     }
 
