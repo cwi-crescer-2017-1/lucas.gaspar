@@ -1,0 +1,26 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="chat/chat.css">
+<div class="container-fluid">
+         <div class="principal">
+             <div ng-repeat="m in mensagens" ng-class="m.Usuario.Nome == nomeAtual ? 'esquerda' : 'direita'">
+                <div><img class="perfil" data-ng-src={{m.Usuario.UrlFoto}}></div>
+             {{m.Usuario.Nome}}
+             {{m.Texto}}
+             {{m.Data}}         
+             </div>
+         </div>
+         <div class="mensagem">
+             <div class="row">
+                 <div class="col-xs-12 col-md-6">
+                    <form>
+                        <div class="form-group">
+                              <textarea class="area-mensagem" rows="6" ng-model="texto">
+                              </textarea>
+                        </div>
+                          <button type="submit" class="btn btn-primary" ng-click="salvar(texto)"> Salvar</button>
+                    </form>
+                </div>
+             </div>
+         </div>
+</div>
