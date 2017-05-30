@@ -192,6 +192,12 @@ namespace Demo1.Infraestrutura.Repositorios
 
                         pedido.Id = (int)dataReader["Id"];
                         pedido.NomeCliente = (string)dataReader["NomeCliente"];
+                        foreach (var item in pedido.Itens)
+                        {
+                            item.ProdutoId = (int)dataReader["Id"];
+                            item.Quantidade = (int)dataReader["Quantidade"];
+                            pedido.Itens.Add(item);
+                        }
 
                         pedidos.Add(pedido);
                     }
