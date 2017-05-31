@@ -14,13 +14,35 @@ namespace EditoraCrescer.api.Controllers
     {
         private LivroRepositorio repositorio = new LivroRepositorio();
 
-        public IHttpActionResult Get()
+        [Route("api/Livros")]
+        [HttpGet]
+        public IHttpActionResult Obter()
         {
             var livros = repositorio.Obter();
 
-            return Ok();
+            return Ok(livros);
         }
 
+        [Route("api/Livros/{id:int}")]
+        [HttpGet]
+        public IHttpActionResult ObterPorId(int id)
+        {
+            var livro = repositorio.ObterPorId(id);
+
+            return Ok(livro);
+        }
+
+        [Route("api/Livros/{genero}")] 
+        [HttpGet]
+        public IHttpActionResult ObterPorGenero(string genero)
+        {
+            var livros = repositorio.ObterPorGenero(genero);
+
+            return Ok(livros);
+        }
+
+        [Route("api/Livros")]
+        [HttpPost]
         public IHttpActionResult Post(Livro livro)
         {
             repositorio.Incluir(livro);
@@ -28,11 +50,22 @@ namespace EditoraCrescer.api.Controllers
             return Ok();
         }
 
+        [Route("api/livros/{id}")]
+        [HttpDelete]
         public IHttpActionResult delete(int id)
         {
             repositorio.Deletar(id);
 
             return Ok();
+        }
+
+        [Route("api/livros/{id}")]
+        [HttpPut]
+        public IHttpActionResult put(int id, Livro livro)
+        {
+            repositorio.Alterar(id, livro);
+
+            return Ok(livro);
         }
     }
 }

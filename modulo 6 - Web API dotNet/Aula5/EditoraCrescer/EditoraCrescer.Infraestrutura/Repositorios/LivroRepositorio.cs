@@ -15,6 +15,17 @@ namespace EditoraCrescer.Infraestrutura.Repositorios
             return contexto.Livros.ToList();
         }
 
+        public Livro ObterPorId(int id)
+        {
+            return contexto.Livros.FirstOrDefault(l => l.Isbn == id);
+        }
+
+        public IEnumerable<Livro> ObterPorGenero(string genero)
+        {
+            var lista = contexto.Livros.Where(l => l.Genero.Contains(genero));
+            return lista;   
+        }
+
         public void Incluir(Livro livro)
         {
             contexto.Livros.Add(livro);
@@ -26,6 +37,11 @@ namespace EditoraCrescer.Infraestrutura.Repositorios
             Livro livroASerRemovido = contexto.Livros.FirstOrDefault(l => l.Isbn == id);
             contexto.Livros.Remove(livroASerRemovido);
             contexto.SaveChanges();
+        }
+
+        public void Alterar(int id, Livro livro)
+        {
+            contexto.Entry(livro);
         }
     }
 }
