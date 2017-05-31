@@ -1,5 +1,4 @@
-﻿using EditoraCrescer.Infraestrutura;
-using EditoraCrescer.Infraestrutura.Entidades;
+﻿using EditoraCrescer.Infraestrutura.Entidades;
 using EditoraCrescer.Infraestrutura.Repositorios;
 using System;
 using System.Collections.Generic;
@@ -10,20 +9,20 @@ using System.Web.Http;
 
 namespace EditoraCrescer.api.Controllers
 {
-    public class LivrosController : ApiController
+    public class AutoresController : ApiController
     {
-        private LivroRepositorio repositorio = new LivroRepositorio();
+        private AutorRepositorio repositorio = new AutorRepositorio();
 
         public IHttpActionResult Get()
         {
-            var livros = repositorio.Obter();
+            var autores = repositorio.Obter();
 
             return Ok();
         }
 
-        public IHttpActionResult Post(Livro livro)
+        public IHttpActionResult Post(Autor autor)
         {
-            repositorio.Incluir(livro);
+            repositorio.Incluir(autor);
 
             return Ok();
         }
@@ -34,5 +33,6 @@ namespace EditoraCrescer.api.Controllers
 
             return Ok();
         }
+
     }
 }
