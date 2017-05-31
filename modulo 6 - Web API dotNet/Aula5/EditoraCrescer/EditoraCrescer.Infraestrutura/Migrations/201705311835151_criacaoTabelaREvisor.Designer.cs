@@ -7,13 +7,13 @@ namespace EditoraCrescer.Infraestrutura.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class CriacaoTabelaREvisores : IMigrationMetadata
+    public sealed partial class criacaoTabelaREvisor : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(CriacaoTabelaREvisores));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(criacaoTabelaREvisor));
         
         string IMigrationMetadata.Id
         {
-            get { return "201705311342385_CriacaoTabelaREvisores"; }
+            get { return "201705311835151_criacaoTabelaREvisor"; }
         }
         
         string IMigrationMetadata.Source

@@ -60,9 +60,9 @@
     <Compile Include="Migrations\201705301942538_CriacaoDoBanco.Designer.cs">
       <DependentUpon>201705301942538_CriacaoDoBanco.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201705311342385_CriacaoTabelaREvisores.cs" />
-    <Compile Include="Migrations\201705311342385_CriacaoTabelaREvisores.Designer.cs">
-      <DependentUpon>201705311342385_CriacaoTabelaREvisores.cs</DependentUpon>
+    <Compile Include="Migrations\201705311835151_criacaoTabelaREvisor.cs" />
+    <Compile Include="Migrations\201705311835151_criacaoTabelaREvisor.Designer.cs">
+      <DependentUpon>201705311835151_criacaoTabelaREvisor.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -78,8 +78,8 @@
     <EmbeddedResource Include="Migrations\201705301942538_CriacaoDoBanco.resx">
       <DependentUpon>201705301942538_CriacaoDoBanco.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201705311342385_CriacaoTabelaREvisores.resx">
-      <DependentUpon>201705311342385_CriacaoTabelaREvisores.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201705311835151_criacaoTabelaREvisor.resx">
+      <DependentUpon>201705311835151_criacaoTabelaREvisor.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

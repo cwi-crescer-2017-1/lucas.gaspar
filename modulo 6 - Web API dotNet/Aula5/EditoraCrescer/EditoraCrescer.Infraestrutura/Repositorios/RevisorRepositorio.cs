@@ -13,7 +13,7 @@ namespace EditoraCrescer.Infraestrutura.Repositorios
 
         public List<Revisor> Obter()
         {
-            return contexto.Revisores.toList();
+            return contexto.Revisores.ToList();
         }
 
         public void Incluir(Revisor revisor)
