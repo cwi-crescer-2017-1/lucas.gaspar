@@ -23,13 +23,22 @@ namespace EditoraCrescer.api.Controllers
             return Ok(livros);
         }
 
-        [Route("api/Livros/{id:int}")]
+        [Route("api/Livros/{isbn:int}")]
         [HttpGet]
-        public IHttpActionResult ObterPorId(int id)
+        public IHttpActionResult ObterPorId(int isbn)
         {
-            var livro = repositorio.ObterPorId(id);
+            var livro = repositorio.ObterPorId(isbn);
 
             return Ok(livro);
+        }
+
+        [Route("api/Livros/Lancamentos")]
+        [HttpGet]
+        public IHttpActionResult ObterLancamentos()
+        {
+            var livros = repositorio.ObterLancamentos();
+
+            return Ok(livros);
         }
 
         [Route("api/Livros/{genero}")] 
@@ -50,6 +59,20 @@ namespace EditoraCrescer.api.Controllers
             return Ok();
         }
 
+        [Route("api/Livros/{isbn}")]
+        [HttpPut]
+        public HttpResponseMessage Put(int isbn, Livro livro)
+        {
+
+            if (isbn != livro.Isbn)
+                return Request.CreateResponse(HttpStatusCode.BadRequest,
+                    new { mensagens = new string[] { "Ids não conferem" } });
+
+            repositorio.Alterar(livro);
+
+            return Request.CreateResponse(HttpStatusCode.OK);
+        }
+
         [Route("api/livros/{id}")]
         [HttpDelete]
         public IHttpActionResult delete(int id)
@@ -59,13 +82,5 @@ namespace EditoraCrescer.api.Controllers
             return Ok();
         }
 
-        [Route("api/livros/{id}")]
-        [HttpPut]
-        public IHttpActionResult put(int id, Livro livro)
-        {
-            repositorio.Alterar(id, livro);
-
-            return Ok(livro);
-        }
     }
 }
