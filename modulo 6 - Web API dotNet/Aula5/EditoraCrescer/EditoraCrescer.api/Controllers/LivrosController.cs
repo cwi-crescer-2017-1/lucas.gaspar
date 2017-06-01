@@ -10,11 +10,11 @@ using System.Web.Http;
 
 namespace EditoraCrescer.api.Controllers
 {
+    [RoutePrefix("api/Livros")]
     public class LivrosController : ApiController
     {
         private LivroRepositorio repositorio = new LivroRepositorio();
 
-        [Route("api/Livros")]
         [HttpGet]
         public IHttpActionResult Obter()
         {
@@ -23,7 +23,7 @@ namespace EditoraCrescer.api.Controllers
             return Ok(livros);
         }
 
-        [Route("api/Livros/{isbn:int}")]
+        [Route("{isbn:int}")]
         [HttpGet]
         public IHttpActionResult ObterPorId(int isbn)
         {
@@ -32,7 +32,7 @@ namespace EditoraCrescer.api.Controllers
             return Ok(livro);
         }
 
-        [Route("api/Livros/Lancamentos")]
+        [Route("Lancamentos")]
         [HttpGet]
         public IHttpActionResult ObterLancamentos()
         {
@@ -41,7 +41,7 @@ namespace EditoraCrescer.api.Controllers
             return Ok(livros);
         }
 
-        [Route("api/Livros/{genero}")] 
+        [Route("{genero}")] 
         [HttpGet]
         public IHttpActionResult ObterPorGenero(string genero)
         {
@@ -50,7 +50,6 @@ namespace EditoraCrescer.api.Controllers
             return Ok(livros);
         }
 
-        [Route("api/Livros")]
         [HttpPost]
         public IHttpActionResult Post(Livro livro)
         {
@@ -59,27 +58,41 @@ namespace EditoraCrescer.api.Controllers
             return Ok();
         }
 
-        [Route("api/Livros/{isbn}")]
+        [Route("{isbn}")]
         [HttpPut]
         public HttpResponseMessage Put(int isbn, Livro livro)
         {
-
             if (isbn != livro.Isbn)
                 return Request.CreateResponse(HttpStatusCode.BadRequest,
                     new { mensagens = new string[] { "Ids não conferem" } });
+
+            if (!repositorio.VerificaSeOLivroExiste(isbn))
+                return Request.CreateResponse(HttpStatusCode.NotFound,
+                    new { mensagens = new string[] { "Livro não encontrado" } });
 
             repositorio.Alterar(livro);
 
             return Request.CreateResponse(HttpStatusCode.OK);
         }
 
-        [Route("api/livros/{id}")]
+        [Route("{id}")]
         [HttpDelete]
-        public IHttpActionResult delete(int id)
+        public HttpResponseMessage delete(int id)
         {
-            repositorio.Deletar(id);
+            var livro = repositorio.ObterPorId(id);
+            if (livro == null)
+                return Request.CreateResponse(HttpStatusCode.NotFound,
+                    new { mensagens = new string[] { "Livro não encontrado" } });
 
-            return Ok();
+            repositorio.Deletar(livro);
+
+            return Request.CreateResponse(HttpStatusCode.OK);
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            repositorio.Dispose();
+            base.Dispose(disposing);
         }
 
     }

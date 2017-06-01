@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace EditoraCrescer.Infraestrutura.Repositorios
 {
-    public class LivroRepositorio
+    public class LivroRepositorio : IDisposable
     {
         private Contexto contexto = new Contexto(); 
         public object Obter()
@@ -63,10 +63,9 @@ namespace EditoraCrescer.Infraestrutura.Repositorios
             contexto.SaveChanges();
         }
 
-        public void Deletar(int id)
+        public void Deletar(Livro livro)
         {
-            Livro livroASerRemovido = contexto.Livros.FirstOrDefault(l => l.Isbn == id);
-            contexto.Livros.Remove(livroASerRemovido);
+            contexto.Livros.Remove(livro);
             contexto.SaveChanges();
         }
 
@@ -76,5 +75,16 @@ namespace EditoraCrescer.Infraestrutura.Repositorios
             contexto.SaveChanges();
             return livro;
         }
+
+        public bool VerificaSeOLivroExiste(int isbn)
+        {
+            return contexto.Livros.Count(e => e.Isbn == isbn) > 0;
+        }
+
+        public void Dispose()
+        {
+            contexto.Dispose();
+        }
+
     }
 }
