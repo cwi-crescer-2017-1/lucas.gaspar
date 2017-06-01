@@ -1,4 +1,4 @@
-var modulo = angular.module('editora', ['ngRoute', 'ui.bootstrap','ngAnimate']);
+var modulo = angular.module('editora', ['ngRoute', 'ui.bootstrap']);
 
 modulo.config(function($routeProvider) {
     $routeProvider

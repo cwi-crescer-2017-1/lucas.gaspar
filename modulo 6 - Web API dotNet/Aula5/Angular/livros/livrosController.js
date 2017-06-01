@@ -1,4 +1,4 @@
-modulo.controller("livrosController", function($scope, livroService){
+modulo.controller("livrosController", function($scope, livroService, $uibModal){
 
     carregarLivros();
     carregarLancamentos();
@@ -20,5 +20,15 @@ modulo.controller("livrosController", function($scope, livroService){
             console.log(response);
         }); 
     }
+
+    $scope.assinatura = function () {
+    var modalInstance = $uibModal.open({
+      animation: true,
+      ariaLabelledBy: 'Inscrever-se',
+      //ariaDescribedBy: 'modal-body',
+      templateUrl: 'modalAssinatura.html',
+      controllerAs: 'modalAssinaturaController'
+      });
+    };
 
 }); 

@@ -1,15 +1,18 @@
 <link rel="stylesheet" href="livros/livros.css">
-    <div class="livroLancamento" ng-repeat="l in lancamentos">
-        {{l.Titulo}}
-        <img class="livroFoto" data-ng-src={{l.Capa}}>
-        {{l.Genero}}
-        {{l.NomeAutor}}
-    </div>
-    <div class="livro" ng-repeat="livro in livros">
-        {{livro.Titulo}}
-        <img class="livroFoto" data-ng-src={{livro.Capa}}>
-        {{livro.Genero}}
-        {{livro.NomeAutor}}
+    <div class="container">
+        <div class="livroLancamento" ng-repeat="l in lancamentos">
+            <h1>{{l.Titulo}}</h1>
+            <img class="livroFoto" data-ng-src={{l.Capa}}>
+            <h2>Gênero: {{l.Genero}} </h2> 
+            <h2>Autor: {{l.NomeAutor}}</h2>
+        </div>
+        <button type="button" class="btn btn-default" ng-click="assinatura()">Inscrever-se!</button>
+        <div class="livro" ng-repeat="livro in livros">
+            {{livro.Titulo}}
+            <img class="livroFoto" data-ng-src={{livro.Capa}}>
+            {{livro.Genero}}
+            {{livro.NomeAutor}}
+        </div>
     </div>
 
 <!--PAGINAÇÃO-->
