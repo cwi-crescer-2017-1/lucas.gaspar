@@ -1,0 +1,15 @@
+<link rel="stylesheet" href="livros/livros.css">
+    <div class="livroLancamento" ng-repeat="l in lancamentos">
+        {{l.Titulo}}
+        <img class="livroFoto" data-ng-src={{l.Capa}}>
+        {{l.Genero}}
+        {{l.NomeAutor}}
+    </div>
+    <div class="livro" ng-repeat="livro in livros">
+        {{livro.Titulo}}
+        <img class="livroFoto" data-ng-src={{livro.Capa}}>
+        {{livro.Genero}}
+        {{livro.NomeAutor}}
+    </div>
+
+<!--PAGINAÇÃO-->
