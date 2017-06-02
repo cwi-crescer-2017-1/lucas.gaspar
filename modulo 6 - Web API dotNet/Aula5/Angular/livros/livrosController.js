@@ -26,9 +26,9 @@ modulo.controller("livrosController", function($scope, livroService, $uibModal){
       animation: true,
       ariaLabelledBy: 'Inscrever-se',
       //ariaDescribedBy: 'modal-body',
-      templateUrl: 'modalAssinatura.html',
-      controllerAs: 'modalAssinaturaController'
-      });
+      templateUrl: 'livros/modalAssinatura.html',
+      controllerAs: 'modalAssinaturaController',
+    });
     };
 
 }); 
