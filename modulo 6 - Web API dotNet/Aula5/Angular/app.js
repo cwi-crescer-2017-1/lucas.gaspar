@@ -17,11 +17,11 @@ modulo.config(function($routeProvider) {
      .when('/administrativo', {
        controller: 'curdLivrosController',
       templateUrl: 'administrativo/crudLivros.html',
-      resolve: {
-        autenticado: function (authService) {
-          return authService.isAutenticadoPromise();
-        }
-      }
+      // resolve: {
+      //   autenticado: function (authService) {
+      //     return authService.isAutenticadoPromise();
+      //   }
+      // }
     })
     .otherwise({redirectTo: '/livros'});
 });
