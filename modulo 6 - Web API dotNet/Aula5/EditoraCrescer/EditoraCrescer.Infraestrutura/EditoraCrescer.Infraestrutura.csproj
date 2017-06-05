@@ -56,6 +56,8 @@
     <Compile Include="Mappings\AutorMap.cs" />
     <Compile Include="Mappings\LivroMap.cs" />
     <Compile Include="Mappings\RevisoresMap.cs" />
+    <Compile Include="Entidades\Usuario.cs" />
+    <Compile Include="Mappings\UsuarioMap.cs" />
     <Compile Include="Migrations\201705301942538_CriacaoDoBanco.cs" />
     <Compile Include="Migrations\201705301942538_CriacaoDoBanco.Designer.cs">
       <DependentUpon>201705301942538_CriacaoDoBanco.cs</DependentUpon>
@@ -68,11 +70,16 @@
     <Compile Include="Migrations\201705311859594_adicionadoCapaAoLivro.Designer.cs">
       <DependentUpon>201705311859594_adicionadoCapaAoLivro.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706050431288_CriacaoTabelaUsuarios.cs" />
+    <Compile Include="Migrations\201706050431288_CriacaoTabelaUsuarios.Designer.cs">
+      <DependentUpon>201706050431288_CriacaoTabelaUsuarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositorios\AutorRepositorio.cs" />
     <Compile Include="Repositorios\LivroRepositorio.cs" />
     <Compile Include="Repositorios\RevisorRepositorio.cs" />
+    <Compile Include="Repositorios\UsuarioRepositorio.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -87,6 +94,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705311859594_adicionadoCapaAoLivro.resx">
       <DependentUpon>201705311859594_adicionadoCapaAoLivro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706050431288_CriacaoTabelaUsuarios.resx">
+      <DependentUpon>201706050431288_CriacaoTabelaUsuarios.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

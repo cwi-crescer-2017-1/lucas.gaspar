@@ -109,6 +109,7 @@
     <Compile Include="Controllers\LivrosController.cs" />
     <Compile Include="Controllers\MeuAtributoAutorizacaoController.cs" />
     <Compile Include="Controllers\RevisoresController.cs" />
+    <Compile Include="Controllers\UsuariosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

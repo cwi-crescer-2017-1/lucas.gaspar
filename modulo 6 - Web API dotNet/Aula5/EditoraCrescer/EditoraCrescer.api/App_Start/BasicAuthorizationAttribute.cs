@@ -1,5 +1,5 @@
-﻿/*using AutDemo.Dominio.Entidades;
-using AutDemo.Infraestrutura.Repositorios;
+﻿using EditoraCrescer.Infraestrutura.Mappings;
+using EditoraCrescer.Infraestrutura.Repositorios;
 using System;
 using System.Linq;
 using System.Net;
@@ -51,7 +51,8 @@ namespace AutDemo.WebApi
                 Usuario usuario = null;
                 if (ValidarUsuario(userNameAndPassword[0], userNameAndPassword[1], out usuario))
                 {
-                    string[] papeis = usuario.Permissoes.Select(papel => papel.Nome).ToArray();
+                    string[] papeis = new string[1];
+                    papeis[0] = usuario.Permissao;
                     var identidade = new GenericIdentity(usuario.Email);
                     var genericUser = new GenericPrincipal(identidade, papeis);
 
@@ -101,4 +102,4 @@ namespace AutDemo.WebApi
             return usuario != null;
         }
     }
-}*/
+}

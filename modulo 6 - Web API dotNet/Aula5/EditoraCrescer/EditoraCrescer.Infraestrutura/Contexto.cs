@@ -18,12 +18,14 @@ namespace EditoraCrescer.Infraestrutura
         public DbSet <Autor> Autores { get; set; }
         public DbSet<Livro> Livros { get; set; }
         public DbSet<Revisor> Revisores { get; set; }
+        public DbSet<Usuario> Usuario { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Configurations.Add(new AutorMap());
             modelBuilder.Configurations.Add(new LivroMap());
             modelBuilder.Configurations.Add(new RevisoresMap());
+            modelBuilder.Configurations.Add(new UsuarioMap());
         }
     }
 }
