@@ -1,9 +1,10 @@
-modulo.controller("modalAssinaturaController", function($scope){
+modulo.controller("modalAssinaturaController", function($scope, $uibModalInstance){
+    var $ctrl = this;
 
-    $scope.fechar = fechar;
+    $scope.cancelar = cancelar;
 
-    function fechar() {
-        $modalStack.dismissAll(reason);
-    }
+    function cancelar() {
+        $uibModalInstance.dismiss('cancel');
+     };
 
 }); 

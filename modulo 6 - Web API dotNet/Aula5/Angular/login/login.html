@@ -1,0 +1,14 @@
+<link rel="stylesheet" href="login/login.css">
+<div class = "container">
+	<div class="wrapper">
+		<form novalidate name="formLogin" ng-submit="login(usuario)">       
+		    <h3 class="form-signin-heading">Bem vindo! Logue na Editora Crescer</h3>
+			  <hr class="colorgraph"><br>
+			  
+			  <input type="text" class="form-control" placeholder="exemplo@gmail.com" required="" autofocus="" ng-model="usuario.email">
+			  <input type="password" class="form-control" placeholder="Senha" required="" ng-model="usuario.senha">     		  
+			 
+			  <button class="btn btn-lg btn-primary btn-block">Login</button>  			
+		</form>			
+	</div>
+</div>
