@@ -30,10 +30,9 @@ namespace Locadora.Infraestrutura.Mappings
                 .WithMany()
                 .Map(x =>
                 {
-                    x.MapLeftKey("Id");
-                    x.MapRightKey("Id");
+                    x.MapLeftKey("IdLocacao");
+                    x.MapRightKey("IdItem");
                     x.ToTable("ItemLocacao");
-
                 });
         }
     }

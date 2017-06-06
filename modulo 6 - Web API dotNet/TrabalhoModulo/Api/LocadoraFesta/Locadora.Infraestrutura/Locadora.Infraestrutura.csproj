@@ -52,9 +52,13 @@
     <Compile Include="Contexto.cs" />
     <Compile Include="Entidades\Cliente.cs" />
     <Compile Include="Entidades\Genero.cs" />
+    <Compile Include="Entidades\Item.cs" />
+    <Compile Include="Entidades\locacao.cs" />
     <Compile Include="Entidades\Pacote.cs" />
     <Compile Include="Entidades\Produto.cs" />
     <Compile Include="Mappings\ClienteMap.cs" />
+    <Compile Include="Mappings\ItemMap.cs" />
+    <Compile Include="Mappings\LocacaoMap.cs" />
     <Compile Include="Mappings\PacoteMap.cs" />
     <Compile Include="Mappings\ProdutoMap.cs" />
     <Compile Include="Migrations\201706061414535_CriacaoDoBancoETabelaCliente.cs" />
@@ -72,6 +76,10 @@
     <Compile Include="Migrations\201706061456339_CriacaoTabelaPacote.cs" />
     <Compile Include="Migrations\201706061456339_CriacaoTabelaPacote.Designer.cs">
       <DependentUpon>201706061456339_CriacaoTabelaPacote.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706061536377_CriacaoTabelaLocacaoEItem.cs" />
+    <Compile Include="Migrations\201706061536377_CriacaoTabelaLocacaoEItem.Designer.cs">
+      <DependentUpon>201706061536377_CriacaoTabelaLocacaoEItem.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -95,6 +103,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706061456339_CriacaoTabelaPacote.resx">
       <DependentUpon>201706061456339_CriacaoTabelaPacote.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706061536377_CriacaoTabelaLocacaoEItem.resx">
+      <DependentUpon>201706061536377_CriacaoTabelaLocacaoEItem.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
