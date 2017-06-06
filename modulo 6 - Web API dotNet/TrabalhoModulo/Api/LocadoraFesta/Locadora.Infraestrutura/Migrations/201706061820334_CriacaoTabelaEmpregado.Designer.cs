@@ -7,13 +7,13 @@ namespace Locadora.Infraestrutura.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class CriacaoTabelaLocacaoEItem : IMigrationMetadata
+    public sealed partial class CriacaoTabelaEmpregado : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(CriacaoTabelaLocacaoEItem));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(CriacaoTabelaEmpregado));
         
         string IMigrationMetadata.Id
         {
-            get { return "201706061536377_CriacaoTabelaLocacaoEItem"; }
+            get { return "201706061820334_CriacaoTabelaEmpregado"; }
         }
         
         string IMigrationMetadata.Source

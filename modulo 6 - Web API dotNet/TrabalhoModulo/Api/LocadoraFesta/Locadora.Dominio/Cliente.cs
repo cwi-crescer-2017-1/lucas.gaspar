@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Locadora.Infraestrutura.Entidades
+namespace Locadora.Dominio
 {
     public class Cliente
     {
@@ -15,6 +15,18 @@ namespace Locadora.Infraestrutura.Entidades
         public string Cpf { get; set; }
         public Genero Genero { get; set; }
         public DateTime DataNascimento { get; set; }
+
+        protected Cliente() { }
+
+        public Cliente(string nome, string endereco, string cidade, string cpf, DateTime dataNascimento)
+        {
+         
+            Nome = nome;
+            Endereco = endereco;
+            Cidade = cidade;
+            Cpf = cpf;
+            DataNascimento = dataNascimento;
+        }
 
     }
 }

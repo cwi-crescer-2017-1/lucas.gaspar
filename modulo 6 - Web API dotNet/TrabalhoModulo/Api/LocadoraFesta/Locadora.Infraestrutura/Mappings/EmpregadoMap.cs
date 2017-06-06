@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 
 namespace Locadora.Infraestrutura.Mappings
 {
-    public class ClienteMap: EntityTypeConfiguration<Cliente>
+    class EmpregadoMap : EntityTypeConfiguration<Empregado>
     {
-        public ClienteMap()
+        public EmpregadoMap()
         {
-            ToTable("Cliente");
+            ToTable("Empregado");
         }
     }
 }

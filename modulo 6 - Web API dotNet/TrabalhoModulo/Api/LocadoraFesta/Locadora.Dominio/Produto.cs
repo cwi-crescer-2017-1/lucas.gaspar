@@ -4,12 +4,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Locadora.Infraestrutura.Entidades
+namespace Locadora.Dominio
 {
     public class Produto
     {
         public int Id { get; set; }
         public string Nome { get; set; }
         public string Descricao { get; set; }
+
+        protected Produto() { }
+
+        public Produto(string nome, string descricao)
+        {
+
+            Nome = nome;
+            Descricao = descricao;
+        }
     }
 }

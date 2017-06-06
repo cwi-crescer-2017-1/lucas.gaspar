@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Locadora.Infraestrutura.Entidades
+namespace Locadora.Dominio
 {
     public class Pacote
     {
@@ -12,5 +12,15 @@ namespace Locadora.Infraestrutura.Entidades
         public string Descricao { get; set; }
         public double Preco { get; set; }
         public string Nome { get; set; }
+
+        protected Pacote() { }
+
+        public Pacote(string descricao, double preco, string nome)
+        {
+
+            Descricao = descricao;
+            Preco = preco;
+            Nome = nome;
+        }
     }
 }

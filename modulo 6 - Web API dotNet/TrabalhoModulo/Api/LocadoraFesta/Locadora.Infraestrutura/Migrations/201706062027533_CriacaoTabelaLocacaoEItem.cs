@@ -24,20 +24,20 @@ namespace Locadora.Infraestrutura.Migrations
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        IdProduto = c.Int(nullable: false),
-                        IdPacote = c.Int(nullable: false),
-                        IdCliente = c.Int(nullable: false),
                         DataLocacao = c.DateTime(nullable: false),
                         DataEntregaPrevista = c.DateTime(nullable: false),
                         DataEntregaReal = c.DateTime(nullable: false),
+                        IdCliente = c.Int(nullable: false),
+                        IdPacote = c.Int(nullable: false),
+                        IdProduto = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.Cliente", t => t.IdCliente, cascadeDelete: true)
                 .ForeignKey("dbo.Pacote", t => t.IdPacote, cascadeDelete: true)
                 .ForeignKey("dbo.Produto", t => t.IdProduto, cascadeDelete: true)
-                .Index(t => t.IdProduto)
+                .Index(t => t.IdCliente)
                 .Index(t => t.IdPacote)
-                .Index(t => t.IdCliente);
+                .Index(t => t.IdProduto);
             
             CreateTable(
                 "dbo.ItemLocacao",
@@ -63,9 +63,9 @@ namespace Locadora.Infraestrutura.Migrations
             DropForeignKey("dbo.Locacao", "IdCliente", "dbo.Cliente");
             DropIndex("dbo.ItemLocacao", new[] { "IdItem" });
             DropIndex("dbo.ItemLocacao", new[] { "IdLocacao" });
-            DropIndex("dbo.Locacao", new[] { "IdCliente" });
-            DropIndex("dbo.Locacao", new[] { "IdPacote" });
             DropIndex("dbo.Locacao", new[] { "IdProduto" });
+            DropIndex("dbo.Locacao", new[] { "IdPacote" });
+            DropIndex("dbo.Locacao", new[] { "IdCliente" });
             DropTable("dbo.ItemLocacao");
             DropTable("dbo.Locacao");
             DropTable("dbo.Item");

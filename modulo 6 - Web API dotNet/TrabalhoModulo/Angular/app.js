@@ -18,9 +18,9 @@ modulo.config(function($routeProvider) {
       controller: 'clienteController',
       templateUrl: 'cliente/cliente.html'
     })
-    // .when('/login', {
-    //   controller: 'loginController',
-    //   templateUrl: 'login/login.html'
-    // })
+    .when('/login', {
+      controller: 'loginController',
+      templateUrl: 'login/login.html'
+    })
     .otherwise({redirectTo: '/locacao'});
 });

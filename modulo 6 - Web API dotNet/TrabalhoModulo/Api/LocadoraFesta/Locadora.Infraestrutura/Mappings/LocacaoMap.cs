@@ -1,4 +1,5 @@
-﻿using Locadora.Infraestrutura.Entidades;
+﻿using Locadora.Dominio;
+using Locadora.Infraestrutura.Entidades;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity.ModelConfiguration;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Locadora.Infraestrutura.Mappings
 {
-    class LocacaoMap : EntityTypeConfiguration<locacao>
+    class LocacaoMap : EntityTypeConfiguration<Locacao>
     {
         public LocacaoMap()
         {
@@ -16,15 +17,15 @@ namespace Locadora.Infraestrutura.Mappings
 
             HasRequired(x => x.Cliente)
                 .WithMany()
-                .HasForeignKey(x => x.IdCliente);
+                .Map(x => x.MapKey("IdCliente"));
 
             HasRequired(x => x.Produto)
                 .WithMany()
-                .HasForeignKey(x => x.IdProduto);
+                .Map(x => x.MapKey("IdProduto"));
 
             HasRequired(x => x.Pacote)
                 .WithMany()
-                .HasForeignKey(x => x.IdPacote);
+                .Map(x => x.MapKey("IdPacote"));
 
             HasMany(x => x.Item)
                 .WithMany()
@@ -34,6 +35,7 @@ namespace Locadora.Infraestrutura.Mappings
                     x.MapRightKey("IdItem");
                     x.ToTable("ItemLocacao");
                 });
+
         }
     }
 }

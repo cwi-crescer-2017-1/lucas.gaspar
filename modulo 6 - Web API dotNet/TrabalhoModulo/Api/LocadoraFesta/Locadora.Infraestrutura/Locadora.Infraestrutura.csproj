@@ -50,13 +50,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Contexto.cs" />
-    <Compile Include="Entidades\Cliente.cs" />
-    <Compile Include="Entidades\Genero.cs" />
-    <Compile Include="Entidades\Item.cs" />
-    <Compile Include="Entidades\locacao.cs" />
-    <Compile Include="Entidades\Pacote.cs" />
-    <Compile Include="Entidades\Produto.cs" />
     <Compile Include="Mappings\ClienteMap.cs" />
+    <Compile Include="Mappings\EmpregadoMap.cs" />
     <Compile Include="Mappings\ItemMap.cs" />
     <Compile Include="Mappings\LocacaoMap.cs" />
     <Compile Include="Mappings\PacoteMap.cs" />
@@ -77,9 +72,13 @@
     <Compile Include="Migrations\201706061456339_CriacaoTabelaPacote.Designer.cs">
       <DependentUpon>201706061456339_CriacaoTabelaPacote.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201706061536377_CriacaoTabelaLocacaoEItem.cs" />
-    <Compile Include="Migrations\201706061536377_CriacaoTabelaLocacaoEItem.Designer.cs">
-      <DependentUpon>201706061536377_CriacaoTabelaLocacaoEItem.cs</DependentUpon>
+    <Compile Include="Migrations\201706061820334_CriacaoTabelaEmpregado.cs" />
+    <Compile Include="Migrations\201706061820334_CriacaoTabelaEmpregado.Designer.cs">
+      <DependentUpon>201706061820334_CriacaoTabelaEmpregado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706062027533_CriacaoTabelaLocacaoEItem.cs" />
+    <Compile Include="Migrations\201706062027533_CriacaoTabelaLocacaoEItem.Designer.cs">
+      <DependentUpon>201706062027533_CriacaoTabelaLocacaoEItem.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -104,9 +103,18 @@
     <EmbeddedResource Include="Migrations\201706061456339_CriacaoTabelaPacote.resx">
       <DependentUpon>201706061456339_CriacaoTabelaPacote.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706061536377_CriacaoTabelaLocacaoEItem.resx">
-      <DependentUpon>201706061536377_CriacaoTabelaLocacaoEItem.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201706061820334_CriacaoTabelaEmpregado.resx">
+      <DependentUpon>201706061820334_CriacaoTabelaEmpregado.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706062027533_CriacaoTabelaLocacaoEItem.resx">
+      <DependentUpon>201706062027533_CriacaoTabelaLocacaoEItem.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Locadora.Dominio\Locadora.Dominio.csproj">
+      <Project>{27B27D2E-DD03-42CF-9C61-DA42ECA4C82E}</Project>
+      <Name>Locadora.Dominio</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

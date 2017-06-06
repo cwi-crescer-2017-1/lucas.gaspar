@@ -1,4 +1,5 @@
-﻿using Locadora.Infraestrutura.Entidades;
+﻿using Locadora.Dominio;
+using Locadora.Infraestrutura.Entidades;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity.ModelConfiguration;
