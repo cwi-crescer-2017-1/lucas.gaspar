@@ -98,6 +98,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\ClienteModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -111,12 +112,15 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Locadora.Dominio\Locadora.Dominio.csproj">
       <Project>{27B27D2E-DD03-42CF-9C61-DA42ECA4C82E}</Project>
       <Name>Locadora.Dominio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Locadora.Infraestrutura\Locadora.Infraestrutura.csproj">
+      <Project>{BF1DC71F-56E1-4E45-B096-894C5547D4B8}</Project>
+      <Name>Locadora.Infraestrutura</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

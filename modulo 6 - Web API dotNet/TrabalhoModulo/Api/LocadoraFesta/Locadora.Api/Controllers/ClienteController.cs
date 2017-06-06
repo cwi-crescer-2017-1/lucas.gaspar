@@ -1,4 +1,6 @@
-﻿using Locadora.Dominio;
+﻿using Locadora.Api.Models;
+using Locadora.Dominio;
+using Locadora.Infraestrutura.Repositorios;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +13,7 @@ namespace Locadora.Api.Controllers
     [RoutePrefix("api/clientes")]
     public class ClienteController : ApiController
     {
-        /*private readonly ClienteRepositorio repositorio = new ClienteRepositorio();
+        private readonly ClienteRepositorio repositorio = new ClienteRepositorio();
         [HttpPost]
         public IHttpActionResult IncluirCliente(ClienteModel model)
         {
@@ -19,6 +21,6 @@ namespace Locadora.Api.Controllers
             repositorio.IncluirCliente(cliente);
 
             return Ok(new { dados = cliente });
-        }*/
+        }
     }
 }

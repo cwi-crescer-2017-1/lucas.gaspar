@@ -18,13 +18,14 @@ namespace Locadora.Dominio
 
         protected Cliente() { }
 
-        public Cliente(string nome, string endereco, string cidade, string cpf, DateTime dataNascimento)
+        public Cliente(string nome, string endereco, string cidade, string cpf, Genero genero, DateTime dataNascimento)
         {
          
             Nome = nome;
             Endereco = endereco;
             Cidade = cidade;
             Cpf = cpf;
+            Genero = Genero;
             DataNascimento = dataNascimento;
         }
 
