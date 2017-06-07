@@ -1,4 +1,5 @@
-﻿using Locadora.Api.Models;
+﻿using Locadora.Api.App_Start;
+using Locadora.Api.Models;
 using Locadora.Dominio;
 using Locadora.Infraestrutura.Repositorios;
 using System;
@@ -10,7 +11,8 @@ using System.Web.Http;
 
 namespace Locadora.Api.Controllers
 {
-    [RoutePrefix("api/clientes")]
+    [BasicAuthorization]
+    [RoutePrefix("api/cliente")]
     public class ClienteController : ApiController
     {
         private readonly ClienteRepositorio repositorio = new ClienteRepositorio();

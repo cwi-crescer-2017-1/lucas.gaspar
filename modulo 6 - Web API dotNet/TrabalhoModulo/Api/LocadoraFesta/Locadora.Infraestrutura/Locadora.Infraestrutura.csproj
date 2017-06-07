@@ -83,6 +83,7 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositorios\ClienteRepositorio.cs" />
+    <Compile Include="Repositorios\EmpregadoRepositorio.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
