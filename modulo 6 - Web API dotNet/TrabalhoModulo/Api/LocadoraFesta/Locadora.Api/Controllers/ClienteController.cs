@@ -22,5 +22,12 @@ namespace Locadora.Api.Controllers
 
             return Ok(new { dados = cliente });
         }
+
+        [HttpGet]
+        public IHttpActionResult ObterQuantidadeLivrosPublicadosExcetoLancamentos()
+        {
+            var clientes = repositorio.ObterClientes();
+            return Ok(new { dados = clientes });
+        }
     }
 }

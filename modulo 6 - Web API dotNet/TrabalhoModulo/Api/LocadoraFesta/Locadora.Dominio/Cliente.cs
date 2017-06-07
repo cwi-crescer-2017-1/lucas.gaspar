@@ -8,13 +8,13 @@ namespace Locadora.Dominio
 {
     public class Cliente
     {
-        public int Id { get; set; }
-        public string Nome { get; set; }
-        public string Endereco { get; set; }
-        public string Cidade { get; set; }
-        public string Cpf { get; set; }
-        public Genero Genero { get; set; }
-        public DateTime DataNascimento { get; set; }
+        public int Id { get; private set; }
+        public string Nome { get; private set; }
+        public string Endereco { get; private set; }
+        public string Cidade { get; private set; }
+        public string Cpf { get; private set; }
+        public Genero Genero { get; private set; }
+        public DateTime DataNascimento { get; private set; }
 
         protected Cliente() { }
 

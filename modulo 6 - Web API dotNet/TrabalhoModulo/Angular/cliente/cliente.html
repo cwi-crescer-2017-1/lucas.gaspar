@@ -1,0 +1,28 @@
+    <form novalidate name="formCliente">
+        <div class="form-group">
+            <label for="nome">Nome</label>
+            <input ng-model="cliente.nome" required type="text" class="form-control" placeholder="ex.: Lucas">
+        </div>
+        <div class="form-group">
+            <label for="endereco">Endereço</label>
+            <input ng-model="cliente.endereco" required type="text" class="form-control" placeholder="ex.: Rua Inglaterra Número: 123">
+        </div>
+        <div class="form-group">
+            <label for="cidade">Cidade</label>
+            <input ng-model="cliente.cidade" required type="text" class="form-control" placeholder="ex.: Porto Alegre">
+        </div>
+        <div class="form-group">
+            <label for="cpf">Cpf</label>
+            <input ng-model="cliente.cpf" required type="text" class="form-control" placeholder="ex.: 30403430">
+        </div>
+        <label>Sexo: </label>
+        <label><input type="radio" name="sexo" ng-model="cliente.sexo" value="0" required>Masculino</label>
+        <label><input type="radio" name="sexo" ng-model="cliente.sexo" value="1" required>Feminino</label>
+
+        <div class="form-group">
+            <label for="dataNascimento">Data de Nascimento</label>
+            <input ng-model="cliente.dataNascimento" required type="date" class="form-control">
+        </div>
+
+        <button type="submit" class="btn btn-primary" ng-click="salvar(cliente)">Salvar</button>
+    </form>

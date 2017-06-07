@@ -20,7 +20,13 @@ namespace Locadora.Infraestrutura.Repositorios
 
         public void IncluirCliente(Cliente cliente)
         {
-            throw new NotImplementedException();
+            contexto.Cliente.Add(cliente);
+            contexto.SaveChanges();
+        }
+
+        public List<Cliente> ObterClientes()
+        {
+            return contexto.Cliente.ToList();
         }
     }
 }
