@@ -1,4 +1,4 @@
-var modulo = angular.module('locadora', ['ngRoute']);
+var modulo = angular.module('locadora', ['ngRoute','auth']);
 
 modulo.config(function($routeProvider) {
     $routeProvider
@@ -22,5 +22,5 @@ modulo.config(function($routeProvider) {
       controller: 'loginController',
       templateUrl: 'login/login.html'
     })
-    .otherwise({redirectTo: '/locacao'});
+    .otherwise({redirectTo: '/login'});
 });
