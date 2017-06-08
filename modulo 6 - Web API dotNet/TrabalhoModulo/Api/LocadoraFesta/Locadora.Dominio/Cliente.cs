@@ -8,7 +8,7 @@ namespace Locadora.Dominio
 {
     public class Cliente
     {
-        public int Id { get; private set; }
+        public int Id { get; set; }
         public string Nome { get; private set; }
         public string Endereco { get; private set; }
         public string Cidade { get; private set; }

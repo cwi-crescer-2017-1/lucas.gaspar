@@ -11,7 +11,7 @@ using System.Web.Http;
 
 namespace Locadora.Api.Controllers
 {
-    //[BasicAuthorization]
+    [BasicAuthorization]
     [RoutePrefix("api/cliente")]
     public class ClienteController : ApiController
     {

@@ -80,11 +80,20 @@
     <Compile Include="Migrations\201706062027533_CriacaoTabelaLocacaoEItem.Designer.cs">
       <DependentUpon>201706062027533_CriacaoTabelaLocacaoEItem.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706082031406_AddPrecoTabelaLocacao.cs" />
+    <Compile Include="Migrations\201706082031406_AddPrecoTabelaLocacao.Designer.cs">
+      <DependentUpon>201706082031406_AddPrecoTabelaLocacao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706082040435_DataEntregaRealPodeSerNula.cs" />
+    <Compile Include="Migrations\201706082040435_DataEntregaRealPodeSerNula.Designer.cs">
+      <DependentUpon>201706082040435_DataEntregaRealPodeSerNula.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositorios\ClienteRepositorio.cs" />
     <Compile Include="Repositorios\EmpregadoRepositorio.cs" />
     <Compile Include="Repositorios\ItemRepositorio.cs" />
+    <Compile Include="Repositorios\LocacaoRepositorio.cs" />
     <Compile Include="Repositorios\PacoteRepositorio.cs" />
     <Compile Include="Repositorios\ProdutoRepositorio.cs" />
   </ItemGroup>
@@ -111,6 +120,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706062027533_CriacaoTabelaLocacaoEItem.resx">
       <DependentUpon>201706062027533_CriacaoTabelaLocacaoEItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706082031406_AddPrecoTabelaLocacao.resx">
+      <DependentUpon>201706082031406_AddPrecoTabelaLocacao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706082040435_DataEntregaRealPodeSerNula.resx">
+      <DependentUpon>201706082040435_DataEntregaRealPodeSerNula.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
