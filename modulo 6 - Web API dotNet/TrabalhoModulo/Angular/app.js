@@ -2,10 +2,10 @@ var modulo = angular.module('locadora', ['ngRoute','auth']);
 
 modulo.config(function($routeProvider) {
     $routeProvider
-    // .when('/locacao', {
-    //   controller: 'locacaoController',
-    //   templateUrl: 'locacao/locacao.html'
-    // })
+    .when('/locacao', {
+      controller: 'locacaoController',
+      templateUrl: 'locacao/locacao.html'
+    })
     // .when('/devolucao', {
     //   controller: 'devolucaoController',
     //   templateUrl: 'devolucao/devolucao.html'

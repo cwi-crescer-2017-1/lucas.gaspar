@@ -11,7 +11,7 @@ using System.Web.Http;
 
 namespace Locadora.Api.Controllers
 {
-    [BasicAuthorization]
+    //[BasicAuthorization]
     [RoutePrefix("api/cliente")]
     public class ClienteController : ApiController
     {
@@ -26,10 +26,11 @@ namespace Locadora.Api.Controllers
         }
 
         [HttpGet]
-        public IHttpActionResult ObterQuantidadeLivrosPublicadosExcetoLancamentos()
+        public IHttpActionResult ObterClientes()
         {
             var clientes = repositorio.ObterClientes();
             return Ok(new { dados = clientes });
         }
+
     }
 }
