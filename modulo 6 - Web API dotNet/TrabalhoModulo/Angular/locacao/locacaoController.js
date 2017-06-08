@@ -41,7 +41,16 @@ modulo.controller("locacaoController", function($scope, locacaoService, authServ
     }
 
     function salvar(locacao) {
-        console.log(locacao);
+        if ($scope.formLocacao.$invalid) {
+            return;
+        }
+        let promise = locacaoService.salvar(locacao);
+
+        promise.then(function (response) {
+            alert("Salvo");
+            $scope.locacao = {};
+        });
+
     }
 
     function deslogar() {
