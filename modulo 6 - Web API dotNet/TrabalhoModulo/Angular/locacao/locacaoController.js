@@ -1,6 +1,7 @@
-modulo.controller("locacaoController", function($scope, locacaoService){
+modulo.controller("locacaoController", function($scope, locacaoService, authService){
 
     $scope.salvar = salvar;
+    $scope.deslogar = deslogar;
 
     buscarCliente();
     buscarProduto();
@@ -41,5 +42,9 @@ modulo.controller("locacaoController", function($scope, locacaoService){
 
     function salvar(locacao) {
         console.log(locacao);
+    }
+
+    function deslogar() {
+        authService.logout();
     }
 }); 

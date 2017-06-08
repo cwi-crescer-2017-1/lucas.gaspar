@@ -7,7 +7,7 @@ angular.module('locadora').constant('authConfig', {
     urlLogin: '/login',
 
     // Opcional - URL da aplicação para onde será redirecionado (se for informado) após o LOGIN com sucesso
-    //urlPrivado: '/administrativo',
+    urlPrivado: '/locacao',
 
     // Opcional - URL da aplicação para onde será redirecionado (se for informado) após o LOGOUT
     urlLogout: '/login'
