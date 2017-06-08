@@ -1,4 +1,7 @@
 modulo.controller("locacaoController", function($scope, locacaoService){
+
+    $scope.salvar = salvar;
+
     buscarCliente();
     buscarProduto();
     buscarPacotes();
@@ -34,5 +37,9 @@ modulo.controller("locacaoController", function($scope, locacaoService){
         promise.then(function (response) {
             $scope.adicionais = response.data.dados;
         }); 
+    }
+
+    function salvar(locacao) {
+        console.log(locacao);
     }
 }); 
