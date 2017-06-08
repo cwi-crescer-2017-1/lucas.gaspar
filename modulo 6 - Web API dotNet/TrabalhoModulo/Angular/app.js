@@ -4,7 +4,12 @@ modulo.config(function($routeProvider) {
     $routeProvider
     .when('/locacao', {
       controller: 'locacaoController',
-      templateUrl: 'locacao/locacao.html'
+      templateUrl: 'locacao/locacao.html',
+      resolve: {
+        autenticado: function (authService) {
+          return authService.isAutenticadoPromise();
+        }
+      }
     })
     // .when('/devolucao', {
     //   controller: 'devolucaoController',
@@ -16,7 +21,13 @@ modulo.config(function($routeProvider) {
     // })
     .when('/cliente', {
       controller: 'clienteController',
-      templateUrl: 'cliente/cliente.html'
+      templateUrl: 'cliente/cliente.html',
+      resolve: {
+        autenticado: function (authService) {
+          return authService.isAutenticadoPromise();
+        }
+      }
+      
     })
     .when('/login', {
       controller: 'loginController',

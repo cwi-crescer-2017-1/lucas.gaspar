@@ -21,7 +21,8 @@ namespace Locadora.Api.Controllers
         {
             _empregadoRepositorio = new EmpregadoRepositorio();
         }
-            
+
+        [BasicAuthorization]
         [HttpGet, Route("usuario")]
         public HttpResponseMessage Obter()
         {

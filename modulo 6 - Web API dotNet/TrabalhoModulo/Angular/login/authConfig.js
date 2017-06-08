@@ -1,7 +1,7 @@
 angular.module('locadora').constant('authConfig', {
 
     // Obrigatória - URL da API que retorna o usuário
-    urlUsuario: 'http://localhost:8080/api/acessos/usuario',
+    urlUsuario: 'http://localhost:55484/api/acessos/usuario',
 
     // Obrigatória - URL da aplicação que possui o formulário de login
     urlLogin: '/login',
