@@ -1,7 +1,9 @@
-modulo.controller("locacaoController", function($scope, locacaoService, authService){
+modulo.controller("locacaoController", function($scope, locacaoService, authService, $location){
 
     $scope.salvar = salvar;
     $scope.deslogar = deslogar;
+    $scope.relatorio = relatorio;
+    $scope.devolucao = devolucao;
 
     buscarCliente();
     buscarProduto();
@@ -42,6 +44,7 @@ modulo.controller("locacaoController", function($scope, locacaoService, authServ
 
     function salvar(locacao) {
         if ($scope.formLocacao.$invalid) {
+            console.log("Errrrrou");
             return;
         }
         let promise = locacaoService.salvar(locacao);
@@ -55,5 +58,13 @@ modulo.controller("locacaoController", function($scope, locacaoService, authServ
 
     function deslogar() {
         authService.logout();
+    }
+
+    function relatorio() {
+        $location.path('/relatorio');
+    }
+
+    function devolucao() {
+        $location.path('/devolucao');
     }
 }); 

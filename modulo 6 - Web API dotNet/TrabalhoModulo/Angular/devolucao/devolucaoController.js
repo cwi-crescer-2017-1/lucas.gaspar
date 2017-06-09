@@ -1,5 +1,6 @@
-modulo.controller("devolucaoController", function($scope, devolucaoService){
+modulo.controller("devolucaoController", function($scope, devolucaoService, $location){
     buscarLivrosASeremDevolvidos();
+    $scope.irLocacao = irLocacao;
     $scope.devolverLocacao = devolverLocacao;
 
     function buscarLivrosASeremDevolvidos() {
@@ -18,5 +19,9 @@ modulo.controller("devolucaoController", function($scope, devolucaoService){
             console.log("DEVOLVIDO",response);
              buscarLivrosASeremDevolvidos();
         });
+    }
+
+    function irLocacao() {
+        $location.path('/locacao');
     }
 }); 

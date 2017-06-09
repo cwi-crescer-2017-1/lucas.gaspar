@@ -1,35 +1,51 @@
 <form novalidate name="formLocacao">
-    <select ng-model="locacao.Cliente">
+  <div class="form-group">
+    <select ng-model="locacao.Cliente" required>
           <option value="" selected>Selecione o Cliente</option>
             <option ng-repeat="c in clientes" ng-value="c">{{c.Nome}}</option>
       </select>
-      <br>
-      <select ng-model="locacao.Produto">
+  </div>
+  <div class="form-group">
+    <a href="http://localhost:8080/#!/cliente">Cadastre o Cliente</a>
+  </div>
+  <div class="form-group">
+    <div class="form-group">
+      <select ng-model="locacao.Produto" required>
           <option value="" selected>Selecione o Produto</option>
             <option ng-repeat="p in produtos" ng-value="p">{{p.Nome}}</option>
       </select>
-        <br>
-      <select ng-model="locacao.Pacote">
+    </div>
+    <div class="form-group">
+      <select ng-model="locacao.Pacote" required>
           <option value="" selected>Selecione o Pacote</option>
             <option ng-repeat="pacote in pacotes" ng-value="pacote">{{pacote.Nome}}</option>
       </select>
-      <br>
+    </div>
+    <div class="form-group">
       <select multiple ng-model="locacao.Item">
             <option ng-repeat="a in adicionais" ng-value="a">{{a.Nome}}</option>
       </select>
+    </div>
 
-      <div class="form-group">
-            <label for="DataLocacao">Data da Locação</label>
-            <input ng-model="locacao.DataLocacao" required type="date" class="form-control">
-        </div>
+    <div class="row">
+      <div class="form-group col-sm-4">
+        <label for="DataLocacao">Data da Locação</label>
+        <input ng-model="locacao.DataLocacao" required type="date" class="form-control">
+      </div>
+    </div>
 
-        <div class="form-group">
-            <label for="DataEntregaPrevista">Data da Entrega Prevista</label>
-            <input ng-model="locacao.DataEntregaPrevista" required type="date" class="form-control">
-        </div>
+    <div class="row">
+      <div class="form-group col-sm-4">
+        <label for="DataEntregaPrevista">Data da Entrega Prevista</label>
+        <input ng-model="locacao.DataEntregaPrevista" required type="date" class="form-control">
+      </div>
+    </div>
 
-      <button type="submit" class="btn btn-primary" ng-click="salvar(locacao)">Salvar</button>
+    <button type="submit" class="btn btn-success" ng-click="salvar(locacao)">Salvar</button>
 
-    </form>
+</form>
+<br><br>
 
-    <button class="btn btn-primary" ng-click="deslogar()">Deslogar</button>
+<button class="btn btn-primary" ng-click="relatorio()">Relatorios</button>
+<button class="btn btn-primary" ng-click="devolucao()">Devolução</button>
+<button class="btn btn-danger" ng-click="deslogar()">Deslogar</button>

@@ -18,10 +18,13 @@ namespace Locadora.Infraestrutura.Repositorios
             contexto.Entry(locacao.Produto).State = System.Data.Entity.EntityState.Unchanged;
             contexto.Entry(locacao.Pacote).State = System.Data.Entity.EntityState.Unchanged;
             contexto.Entry(locacao.Cliente).State = System.Data.Entity.EntityState.Unchanged;
-            foreach (var i in locacao.Item)
+            if (locacao.Item != null)
             {
-                contexto.Entry(i).State = System.Data.Entity.EntityState.Unchanged;
-                precoItens = precoItens + i.Preco;
+                foreach (var i in locacao.Item)
+                {
+                    contexto.Entry(i).State = System.Data.Entity.EntityState.Unchanged;
+                    precoItens = precoItens + i.Preco;
+                }
             }
 
             var preco = locacao.calcularPreco(locacao.Pacote.Preco, precoItens, locacao.DataLocacao ,locacao.DataEntregaPrevista);
@@ -35,7 +38,7 @@ namespace Locadora.Infraestrutura.Repositorios
         {
             DateTime trintaDiasAtras = DateTime.Now.Date.Subtract(new TimeSpan(30, 0, 0, 0, 0));
             return contexto.Locacao.Include(x => x.Cliente).Where(l => l.DataEntregaReal.HasValue==false && 
-                     DbFunctions.TruncateTime(l.DataEntregaPrevista) <= trintaDiasAtras).OrderByDescending(l => l.DataEntregaPrevista)
+                     DbFunctions.TruncateTime(l.DataEntregaPrevista) <= trintaDiasAtras).OrderBy(l => l.DataEntregaPrevista)
                      .ToList();
         }
 

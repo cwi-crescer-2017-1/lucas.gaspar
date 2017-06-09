@@ -1,7 +1,8 @@
-modulo.controller("relatorioController", function($scope, relatorioService, $localStorage){
+modulo.controller("relatorioController", function($scope, relatorioService, $localStorage, $location){
     $scope.relatorioAtraso = relatorioAtraso;
     $scope.verificaPermissao = verificaPermissao;
     $scope.relatorioMensal = relatorioMensal;
+    $scope.irLocacao = irLocacao;
 
     function relatorioAtraso() {
         let promise = relatorioService.relatorioAtraso();
@@ -28,6 +29,10 @@ modulo.controller("relatorioController", function($scope, relatorioService, $loc
         else{
             return false;
         }
+    }
+
+    function irLocacao() {
+        $location.path('/locacao');
     }
 
 }); 

@@ -1,4 +1,4 @@
-modulo.controller("clienteController", function($scope, clienteService){
+modulo.controller("clienteController", function($scope, clienteService, $location){
     $scope.salvar = salvar;
     function salvar(cliente) {
         if($scope.formCliente.$invalid) {
@@ -8,8 +8,8 @@ modulo.controller("clienteController", function($scope, clienteService){
         
         let promise = clienteService.salvar(cliente);
         promise.then(function () {
-            console.log("Salvo com sucesso");
-            $scope.cliente = "";
+            alert("Salvo com sucesso");
+            $location.path('/locacao');
         });
     }
 }); 
