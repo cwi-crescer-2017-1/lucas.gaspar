@@ -1,21 +1,21 @@
 <form novalidate name="formLocacao">
-    <select ng-model="locacao.cliente">
+    <select ng-model="locacao.Cliente">
           <option value="" selected>Selecione o Cliente</option>
-            <option ng-repeat="c in clientes" value="{{c}}">{{c.Nome}}</option>
+            <option ng-repeat="c in clientes" ng-value="c">{{c.Nome}}</option>
       </select>
       <br>
-      <select ng-model="locacao.produto">
+      <select ng-model="locacao.Produto">
           <option value="" selected>Selecione o Produto</option>
-            <option ng-repeat="p in produtos" value="{{p}}">{{p.Nome}}</option>
+            <option ng-repeat="p in produtos" ng-value="p">{{p.Nome}}</option>
       </select>
         <br>
-      <select ng-model="locacao.pacote">
+      <select ng-model="locacao.Pacote">
           <option value="" selected>Selecione o Pacote</option>
-            <option ng-repeat="pacote in pacotes" value="{{pacote}}">{{pacote.Nome}}</option>
+            <option ng-repeat="pacote in pacotes" ng-value="pacote">{{pacote.Nome}}</option>
       </select>
       <br>
-      <select multiple ng-model="locacao.adicional">
-            <option ng-repeat="a in adicionais" value="{{a}}">{{a.Nome}}</option>
+      <select multiple ng-model="locacao.Item">
+            <option ng-repeat="a in adicionais" ng-value="a">{{a.Nome}}</option>
       </select>
 
       <div class="form-group">
