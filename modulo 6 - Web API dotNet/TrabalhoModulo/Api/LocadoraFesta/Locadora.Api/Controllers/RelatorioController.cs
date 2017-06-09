@@ -22,7 +22,7 @@ namespace Locadora.Api.Controllers
             return Ok(new { dados = relatorio });
         }
 
-        [HttpGet, Route("mensal")]
+        [HttpGet, Route("mensal"), BasicAuthorization(Roles = "Administrador")]
         public IHttpActionResult ObterRelatorioMensal()
         {
             var relatorio = repositorio.ObterRelatorioMensal();
