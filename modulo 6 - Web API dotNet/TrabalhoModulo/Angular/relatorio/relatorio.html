@@ -1,0 +1,35 @@
+<button class="btn btn-primary" ng-click="relatorioAtraso()">Gerar Relatório Atrasos</button>
+<button class="btn btn-primary" ng-click="relatorioMensal()" ng-if="verificaPermissao()">Relatório Mensal</button>
+<div class="row col-md-12" ng-if="atrasados!=null">
+        <h1>Relatório de Atrasados</h1>
+    <table class="table table-striped">
+        <tr>
+            <th>Data Entrega Prevista</th>
+            <th>Nome</th>
+            <th>Cpf</th>
+        </tr>
+    
+        <tr ng-repeat="a in atrasados">
+            <td>{{a.DataEntregaPrevista | date : 'dd-MM-yyyy' }}</td>
+            <td>{{a.Cliente.Nome}}</td>
+            <td>{{a.Cliente.Cpf}}</td>
+        </tr>
+    </table>
+</div>
+
+<div class="row col-md-12" ng-if="mensal!=null">
+    <h1>Relatório de Locações Mensal</h1>
+    <table class="table table-striped">
+        <tr>
+            <th>Data Entrega Prevista</th>
+            <th>Nome</th>
+            <th>Cpf</th>
+        </tr>
+    
+        <tr ng-repeat="m in mensal">
+            <td>{{m.DataEntregaPrevista | date : 'dd-MM-yyyy' }}</td>
+            <td>{{m.Cliente.Nome}}</td>
+            <td>{{m.Cliente.Cpf}}</td>
+        </tr>
+    </table>
+</div>

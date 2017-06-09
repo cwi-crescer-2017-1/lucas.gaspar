@@ -11,14 +11,6 @@ modulo.config(function($routeProvider) {
         }
       }
     })
-    // .when('/devolucao', {
-    //   controller: 'devolucaoController',
-    //   templateUrl: 'devolucao/devolucao.html'
-    // })
-    // .when('/relatorio', {
-    //   controller: 'relatorioController',
-    //   templateUrl: 'relatorio/relatorio.html'
-    // })
     .when('/cliente', {
       controller: 'clienteController',
       templateUrl: 'cliente/cliente.html',
@@ -28,6 +20,15 @@ modulo.config(function($routeProvider) {
         }
       }
       
+    })
+    .when('/relatorio', {
+      controller: 'relatorioController',
+      templateUrl: 'relatorio/relatorio.html',
+      resolve: {
+        autenticado: function (authService) {
+          return authService.isAutenticadoPromise();
+        }
+      }
     })
     .when('/login', {
       controller: 'loginController',
