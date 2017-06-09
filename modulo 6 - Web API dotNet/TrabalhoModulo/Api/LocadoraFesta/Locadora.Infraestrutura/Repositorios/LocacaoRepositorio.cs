@@ -24,7 +24,7 @@ namespace Locadora.Infraestrutura.Repositorios
                 precoItens = precoItens + i.Preco;
             }
 
-            var preco = locacao.calcularPreco(locacao.Pacote.Preco, precoItens);
+            var preco = locacao.calcularPreco(locacao.Pacote.Preco, precoItens, locacao.DataLocacao ,locacao.DataEntregaPrevista);
             locacao.PrecoTotal = preco;
             contexto.Locacao.Add(locacao);
 
@@ -46,5 +46,21 @@ namespace Locadora.Infraestrutura.Repositorios
                      DbFunctions.TruncateTime(l.DataEntregaReal) >= trintaDiasAtras)
                      .ToList();
         }
+
+        public List<Locacao> ObterLocacoesAindaNaoEntregues()
+        {
+            return contexto.Locacao.Include(x => x.Cliente).Include(x => x.Pacote).Include(x => x.Produto).Where(l => l.DataEntregaReal.HasValue == false)
+                     .ToList();
+        }
+
+        public void Devolver(Locacao locacao)
+        {
+            DateTime hoje = DateTime.Now.Date;
+            //locacao.PrecoTotal = locacao.calcularAtraso();
+            contexto.Entry(locacao).State = EntityState.Modified;
+            contexto.SaveChanges();
+
+        }
+
     }
 }

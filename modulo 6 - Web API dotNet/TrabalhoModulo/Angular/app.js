@@ -30,6 +30,15 @@ modulo.config(function($routeProvider) {
         }
       }
     })
+    .when('/devolucao', {
+      controller: 'devolucaoController',
+      templateUrl: 'devolucao/devolucao.html',
+      resolve: {
+        autenticado: function (authService) {
+          return authService.isAutenticadoPromise();
+        }
+      }
+    })
     .when('/login', {
       controller: 'loginController',
       templateUrl: 'login/login.html'

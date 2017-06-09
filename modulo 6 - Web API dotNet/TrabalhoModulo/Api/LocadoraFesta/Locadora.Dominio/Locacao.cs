@@ -31,9 +31,37 @@ namespace Locadora.Dominio
             DataEntregaPrevista = dataEntregaPrevista;
             Item = item;
         }
-        public double calcularPreco(double preco, double itens)
+        public double calcularPreco(double preco, double itens, DateTime dataLocacao, DateTime dataEntregaPrevista)
         {
-            return preco+itens;
+            var diaria = preco+itens;
+            var diferencaDeDias = (dataEntregaPrevista - dataLocacao).TotalDays;
+            return diaria * diferencaDeDias;
         }
+
+        public void AtribuirDataDevolucao()
+        {
+            DateTime hoje = DateTime.Now;
+            this.DataEntregaReal = hoje;
+        }
+
+        /*public double calcularAtraso()
+        {
+            DateTime hoje = DateTime.Now.Date;
+            if (this.DataEntregaPrevista <= hoje)
+            {
+                var diferencaDeDias = (hoje - this.DataEntregaPrevista).TotalDays;
+                double precoItens = 0;
+                foreach (var i in this.Item)
+                {
+                    precoItens += i.Preco;
+                }
+                var diaria = this.Pacote.Preco + precoItens;
+                return (diaria * diferencaDeDias) + this.PrecoTotal;
+            }
+            else
+            {
+                return this.PrecoTotal;
+            }
+        }*/
     }
 }

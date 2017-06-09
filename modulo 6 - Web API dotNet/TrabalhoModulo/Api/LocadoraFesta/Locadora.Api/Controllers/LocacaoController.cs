@@ -23,5 +23,26 @@ namespace Locadora.Api.Controllers
 
             return Ok(new { dados = locacaoFeita });
         }
+
+        [HttpGet, Route("devolucao")]
+        public IHttpActionResult ObterLocacoesAindaNaoEntregues()
+        {
+            var locacoes = repositorio.ObterLocacoesAindaNaoEntregues();
+            return Ok(new { dados = locacoes });
+        }
+
+        [HttpPut,Route("devolucao")]
+        public HttpResponseMessage Put(Locacao locacao)
+        {
+            if (locacao.Id == 0)
+                return Request.CreateResponse(HttpStatusCode.BadRequest,
+                    new { mensagens = new string[] { "Ids não conferem" } });
+
+            locacao.AtribuirDataDevolucao();
+
+            repositorio.Devolver(locacao);
+
+            return Request.CreateResponse(HttpStatusCode.OK);
+        }
     }
 }

@@ -1,0 +1,18 @@
+<div class="row col-md-12">
+        <h1>Relatório de Atrasados</h1>
+    <table class="table table-striped">
+        <tr>
+            <th>Data Entrega Prevista</th>
+            <th>Nome</th>
+            <th>Cpf</th>
+            <th></th>
+        </tr>
+    
+        <tr ng-repeat="a in mensal">
+            <td>{{a.DataEntregaPrevista | date : 'dd-MM-yyyy' }}</td>
+            <td>{{a.Cliente.Nome}}</td>
+            <td>{{a.Cliente.Cpf}}</td>
+            <td><button class="btn btn-primary" ng-click="devolverLocacao(a)">Devolver</button></td>
+        </tr>
+    </table>
+</div>
