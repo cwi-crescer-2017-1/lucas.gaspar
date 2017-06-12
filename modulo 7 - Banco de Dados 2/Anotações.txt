@@ -1,0 +1,22 @@
+Serviços :
+OracleServiceXE
+OracleXETNSListener
+
+Ferramentas: Sql developer
+
+senha system e SYS (AS sysdba) - colocar "oracle"
+
+CREATE TABLE PESSOA (
+IDPESSOA integer not null,
+Nome varchar2(30) not null,
+  constraint PK_Pessoa primary key (IDPESSOA)
+);
+
+CREATE sequence SQPessoa;
+
+Insert into Pessoa (IDPESSOA, Nome)
+Values (SQPessoa.nextval, 'Lucas');
+
+commit;
+
+select * from cidade

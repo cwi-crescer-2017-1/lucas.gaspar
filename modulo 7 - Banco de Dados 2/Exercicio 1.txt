@@ -1,0 +1,16 @@
+Exercicio 1
+
+select p.idProduto, p.nome from produto p
+inner join PedidoItem pi on p.idProduto = pi.idProduto
+inner join Pedido ped on pi.idPedido = ped.idPedido
+having max(ped.dataPedido) <= TRUNC(SYSDATE) -120
+group by p.idProduto, p.nome
+
+Exercício 2
+
+update Produto set situacao = 'I'
+where idproduto in (select p.idProduto from produto p
+inner join PedidoItem pi on p.idProduto = pi.idProduto
+inner join Pedido ped on pi.idPedido = ped.idPedido
+having max(ped.dataPedido) <= TRUNC(SYSDATE) -120
+group by p.idProduto)
