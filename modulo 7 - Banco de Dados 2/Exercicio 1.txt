@@ -14,3 +14,11 @@ inner join PedidoItem pi on p.idProduto = pi.idProduto
 inner join Pedido ped on pi.idPedido = ped.idPedido
 having max(ped.dataPedido) <= TRUNC(SYSDATE) -120
 group by p.idProduto)
+
+Exercício 3
+
+select sum(item.quantidade) qtde
+from PedidoItem item
+inner join pedido ped on ped.IDPedido = item.IDPedido
+where item.IdProduto = :p_IDProduto
+and ped.DataPedido >= trunc(sysdate, 'yyyy')

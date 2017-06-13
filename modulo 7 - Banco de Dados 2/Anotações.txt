@@ -19,4 +19,5 @@ Values (SQPessoa.nextval, 'Lucas');
 
 commit;
 
-select * from cidade
+from DUAL // tabela para select para testar funções
+EXEC dbms_stats.gather_schema_stats(USER);  atualizar estatísticas para otimização de tempo de query
