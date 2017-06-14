@@ -1,3 +1,5 @@
+EXERCICIO 1
+
 DECLARE
  CURSOR C_CidadesDuplicadas IS
      select count(*), nome, uf from cidade
@@ -15,3 +17,8 @@ BEGIN
         END LOOP;     
    END LOOP;
 END;
+
+EXERCICIO 2
+
+update pedido set valorpedido = (select sum(quantidade * precounitario) from pedidoItem where idpedido = :idpedido)
+where idpedido = :idpedido
