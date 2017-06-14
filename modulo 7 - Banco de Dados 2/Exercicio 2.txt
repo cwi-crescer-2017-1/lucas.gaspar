@@ -22,3 +22,17 @@ EXERCICIO 2
 
 update pedido set valorpedido = (select sum(quantidade * precounitario) from pedidoItem where idpedido = :idpedido)
 where idpedido = :idpedido
+
+Exercicio 3
+
+declare
+    CURSOR C_ClientesNaoAtivos IS
+    select c.idcliente from cliente c
+    inner join pedido p on p.idcliente = c.idcliente
+    where p.dataEntrega <= TRUNC(ADD_MONTHS (SYSDATE, -6), 'MM');
+begin
+        FOR reg IN C_ClientesNaoAtivos LOOP
+           update cliente set situacao = 'I'
+           where idcliente = reg.idcliente;  
+        END LOOP;  
+end;
