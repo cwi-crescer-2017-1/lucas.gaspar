@@ -6,13 +6,13 @@ DECLARE
      having count(*) > 1
      group by nome, uf;
      
-     CURSOR C_ClienteECidade(cidadecomparar in string) IS
+     CURSOR C_ClienteECidade(cidadecomparar in string, ufcomparar in string) IS
      select cliente.nome as nomecliente , cidade.nome as nomecidade from cliente
      inner join cidade on cliente.idCidade = cidade.idCidade
-     where cidade.nome like cidadecomparar ;
+     where cidade.nome like cidadecomparar and cidade.uf like ufcomparar;
 BEGIN
    FOR reg_cidade IN C_CidadesDuplicadas LOOP
-        FOR reg_cliente IN C_ClienteECidade(reg_cidade.nome) LOOP
+        FOR reg_cliente IN C_ClienteECidade(reg_cidade.nome, reg_cidade.uf) LOOP
              DBMS_OUTPUT.PUT_LINE(reg_cidade.nome || '-' || reg_cidade.uf || '-' || reg_cliente.nomecliente);
         END LOOP;     
    END LOOP;

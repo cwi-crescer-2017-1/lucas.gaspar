@@ -1,3 +1,5 @@
+TODA CHAVE ESTRANGEIRA TEM QUE SER UM INDICE.
+toda coluna usada como filtro tem que ser índice
 Serviços :
 OracleServiceXE
 OracleXETNSListener
