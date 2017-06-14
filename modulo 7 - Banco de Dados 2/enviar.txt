@@ -1,0 +1,28 @@
+declare
+  cursor c_cidades is
+       select Nome, UF, min(idCidade) as menorCidade
+       from   Cidade
+       group  by Nome, UF
+       having count(1) >1;
+  cursor c_clientes (pNome in varchar2,
+                     pUF   in varchar2) is
+     select cli.IDCliente,
+            cli.Nome as Nome_Cliente,
+            cid.Nome as Nome_Cidade,
+            cid.UF,
+            cid.idcidade
+     from   Cliente cli
+     inner join Cidade cid on cid.IDCidade = cli.IDCidade
+     where  cid.Nome = pNome
+     and    cid.UF   = pUF;
+begin
+
+  FOR c in c_cidades LOOP     
+      dbms_output.put_line('Cidade: '|| c.Nome);
+      FOR i in c_clientes (c.Nome, c.UF) LOOP
+           dbms_output.put_line('Cliente: '|| i.Nome_Cliente || 'Cidade id: ' || i.idCidade );
+           update cliente set idcidade = c.menorCidade where cliente.idcliente = i.Idcliente;
+      END LOOP;
+      delete cidade where nome like c.Nome and uf like c.uf and idcidade!=c.menorCidade;
+  END LOOP;
+end;
