@@ -1,0 +1,39 @@
+Create table Log_Aposta (
+  IdAposta integer not null,
+  Data_Hora date default sysdate,  
+  Operacao char(1) not null,
+    constraint PK_Log_Aposta 
+       primary key (IdAposta)
+);
+
+Create sequence sqLog_Aposta;
+desc log_aposta
+select * from log_aposta
+
+create or replace
+trigger TR_CRUD_APOSTA
+    after insert or update or delete on APOSTA
+Declare
+  v_operacao char(1);
+  v_idaposta   Integer;
+Begin
+
+  if INSERTING then
+     v_operacao := 'I';
+     v_idaposta   := :new.idaposta;
+  elsif UPDATING then
+     v_operacao := 'U';
+     v_idaposta   := :old.idaposta;
+  else
+     v_operacao := 'D';
+     v_idaposta  := :old.idaposta;
+  end if;
+  Insert into Log_Aposta (IdAposta, Data_Hora, operacao)
+      values (sqLog_Aposta.nextval, sysdate, v_operacao);
+End TR_CRUD_APOSTA;
+
+select * from cidade
+desc aposta
+select max(idaposta) from aposta
+insert into aposta  (idaposta, idconcurso, idcidade, data_hora, quantidade_numeros, valor, bolao)
+values (sqAposta.nextval, 1817, 1, sysdate, 1, 212, 0);
