@@ -1,7 +1,9 @@
 package br.com.crescer.tema1;
 
 import br.com.crescer.tema1.CalendarUtils.DiaSemana;
+import java.math.BigDecimal;
 import java.util.Date;
+import java.util.Map;
 
 public class Testes {
    public static void main(String[] args) {
@@ -45,5 +47,15 @@ public class Testes {
         //B
         String diferenca = mcu.tempoDecorrido(new Date(96,00,01));
         System.out.println(diferenca);
+        
+        MeuParcelator mp = new MeuParcelator();
+        
+        Map<String, BigDecimal> map = mp.calcular(new BigDecimal(1000), 10, 10, new Date());
+        
+        map.entrySet().forEach(e ->{
+            System.out.println("Map" + e.getKey() + " " + e.getValue());  
+        });
+        
+        
     } 
 }
