@@ -53,7 +53,7 @@ public class MeuCalendarioUtils implements CalendarUtils {
        int mes = diaAtual.get(diaAtual.MONTH) - dataInformada.get(dataInformada.MONTH);
        int ano = diaAtual.get(diaAtual.YEAR) - dataInformada.get(dataInformada.YEAR);
        
-       return diferenca = "dias de diferença: " + dia + " Meses de diferença: " +mes+ " Anos de diferença: "+ano;
+       return diferenca = ano+" ano(s), "+mes+" mese(s) e "+dia+ " dia(s)";
     }
     
 }
