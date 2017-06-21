@@ -5,12 +5,7 @@ import java.text.Normalizer;
 public class StringManipulation implements StringUtils {
 
     public boolean isEmpty(String string) {
-         if (string.isEmpty() == false && string.trim().length()>0){
-             return false;
-         }
-         else{
-             return true;
-         }   
+         return string == null || string.trim().isEmpty();   
     }
 
     public String inverter(String string) {
