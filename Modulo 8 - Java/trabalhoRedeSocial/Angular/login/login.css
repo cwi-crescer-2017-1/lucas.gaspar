@@ -1,0 +1,16 @@
+* {
+    box-sizing: border-box;
+}
+
+body{
+    background-size: cover;
+    margin: 0;
+    background-image: url(Wallpaper.jpg);
+    background-repeat: no-repeat;
+    background-position: top center;
+}
+
+.login{
+    text-align: center;
+    background-color: rgba(238, 224, 229, 0.8);
+}
