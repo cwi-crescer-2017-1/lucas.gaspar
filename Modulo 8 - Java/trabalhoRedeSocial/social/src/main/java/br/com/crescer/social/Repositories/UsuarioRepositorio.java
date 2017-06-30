@@ -6,12 +6,16 @@
 package br.com.crescer.social.Repositories;
 
 import br.com.crescer.social.entity.Usuario;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.query.Param;
 
 /**
  *
  * @author lucas.gaspar
  */
 public interface UsuarioRepositorio extends CrudRepository<Usuario, Long>{
+
+    public Usuario findByEmail(String email);
     
 }

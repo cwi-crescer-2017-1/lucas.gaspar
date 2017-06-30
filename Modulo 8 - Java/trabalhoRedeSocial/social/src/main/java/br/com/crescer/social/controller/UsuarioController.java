@@ -31,7 +31,7 @@ public class UsuarioController {
     }
     
     @PostMapping("/cadastrar")
-    public void Genero(@RequestBody Usuario u){
+    public void Cadastrar(@RequestBody Usuario u){
         usuarioService.CadastrarUsuario(u);
     }
 }

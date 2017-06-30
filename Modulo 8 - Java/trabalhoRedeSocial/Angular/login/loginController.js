@@ -23,11 +23,8 @@ modulo.controller("loginController", function($scope, loginService, authService)
   };
 
     function cadastrar(usuario) {
-      // if ($scope.formCadastro.$invalid) {
-      //       return;
-      //   }
-      if(1!=2){
-
+      if ($scope.formCadastro.$invalid) {
+            return;
       }
       else{
         let promise = loginService.cadastrar(usuario)

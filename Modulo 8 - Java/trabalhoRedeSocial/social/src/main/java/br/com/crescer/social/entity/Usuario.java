@@ -27,7 +27,7 @@ public class Usuario {
     @Id
     @GeneratedValue(strategy = SEQUENCE, generator = SQ_NAME)
     @SequenceGenerator(name = SQ_NAME, sequenceName = SQ_NAME, allocationSize = 1)
-    @Column(name = "ID_ATOR")
+    @Column(name = "ID")
     private Long id;
     
     @Basic(optional = false)
