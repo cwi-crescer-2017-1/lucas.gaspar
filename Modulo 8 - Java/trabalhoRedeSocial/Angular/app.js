@@ -1,4 +1,4 @@
-var modulo = angular.module('redeSocial', ['ngRoute']);
+var modulo = angular.module('redeSocial', ['ngRoute','auth']);
 modulo.config(function($routeProvider) {
     $routeProvider
     .when('/login', {

@@ -1,16 +1,18 @@
-* {
-    box-sizing: border-box;
-}
-
-body{
-    background-size: cover;
-    margin: 0;
-    background-image: url(Wallpaper.jpg);
-    background-repeat: no-repeat;
-    background-position: top center;
-}
-
-.login{
+.login-page .login{
     text-align: center;
     background-color: rgba(238, 224, 229, 0.8);
+    border-radius: 15px;
+}
+
+    .login-page .login .btn{
+        margin-bottom: 20px;
+    }
+
+@keyframes fadeIn {
+   0% { opacity: 0; }
+   100% { opacity: 1;}
+}
+
+.fadeIn {
+   animation: fadeIn 1.3s ease-in-out;
 }
