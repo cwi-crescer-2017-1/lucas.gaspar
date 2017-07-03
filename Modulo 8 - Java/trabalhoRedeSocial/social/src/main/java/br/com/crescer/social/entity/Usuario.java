@@ -30,15 +30,6 @@ import javax.xml.bind.annotation.XmlRootElement;
  */
 @Entity
 @Table(name = "USUARIO")
-@XmlRootElement
-@NamedQueries({
-    @NamedQuery(name = "Usuario.findAll", query = "SELECT u FROM Usuario u"),
-    @NamedQuery(name = "Usuario.findById", query = "SELECT u FROM Usuario u WHERE u.id = :id"),
-    @NamedQuery(name = "Usuario.findByDataNascimento", query = "SELECT u FROM Usuario u WHERE u.dataNascimento = :dataNascimento"),
-    @NamedQuery(name = "Usuario.findByEmail", query = "SELECT u FROM Usuario u WHERE u.email = :email"),
-    @NamedQuery(name = "Usuario.findByNome", query = "SELECT u FROM Usuario u WHERE u.nome = :nome"),
-    @NamedQuery(name = "Usuario.findBySenha", query = "SELECT u FROM Usuario u WHERE u.senha = :senha"),
-    @NamedQuery(name = "Usuario.findBySexo", query = "SELECT u FROM Usuario u WHERE u.sexo = :sexo")})
 public class Usuario implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -50,7 +41,7 @@ public class Usuario implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "ID")
-    private BigDecimal id;
+    private Long id;
     @Basic(optional = false)
     @NotNull
     @Column(name = "DATA_NASCIMENTO")
@@ -80,11 +71,11 @@ public class Usuario implements Serializable {
     public Usuario() {
     }
 
-    public Usuario(BigDecimal id) {
+    public Usuario(Long id) {
         this.id = id;
     }
 
-    public Usuario(BigDecimal id, Date dataNascimento, String email, String nome, String senha, long sexo) {
+    public Usuario(Long id, Date dataNascimento, String email, String nome, String senha, long sexo) {
         this.id = id;
         this.dataNascimento = dataNascimento;
         this.email = email;
@@ -93,11 +84,11 @@ public class Usuario implements Serializable {
         this.sexo = sexo;
     }
 
-    public BigDecimal getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(BigDecimal id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
